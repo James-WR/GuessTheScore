@@ -1,0 +1,2 @@
+class Fixture < ApplicationRecord
+end

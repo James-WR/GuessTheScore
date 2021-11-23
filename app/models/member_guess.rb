@@ -1,0 +1,2 @@
+class MemberGuess < ApplicationRecord
+end
