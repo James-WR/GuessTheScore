@@ -3,9 +3,8 @@
 <li>
   <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
 </li>
-
 <ul>
-  <li><% @communities.each do |community| %></li>
+  <% @communities.each do |community| %>
   <li><%= link_to community.community_name, community_path(community) %> </li>
-  <li><% end %></li>
+  <% end %>
 </ul>
