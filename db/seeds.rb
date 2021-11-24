@@ -179,7 +179,8 @@ bundesliga_array.each do |team|
   team.save
 end
 
-# premier league
+# premier league fixtures
+
 fixture = Fixture.new(
   date: ,
   match_week: 15,
@@ -264,6 +265,68 @@ fixture = Fixture.new(
   date:
   match_week: 15,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Aston Villa"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Leicester"),
+  home_goals_result: nil,
+  away_goals_result: nil
+)
+fixture.save
+
+# WSL fixtures
+
+fixture = Fixture.new(
+  date:
+  match_week: 9,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Reading"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Chelsea"),
+  home_goals_result: nil,
+  away_goals_result: nil
+)
+fixture.save
+
+fixture = Fixture.new(
+  date:
+  match_week: 9,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Brighton"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Man United"),
+  home_goals_result: nil,
+  away_goals_result: nil
+)
+fixture.save
+
+fixture = Fixture.new(
+  date:
+  match_week: 9,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Everton"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "West Ham"),
+  home_goals_result: nil,
+  away_goals_result: nil
+)
+fixture.save
+
+fixture = Fixture.new(
+  date:
+  match_week: 9,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Birmingham"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Man City"),
+  home_goals_result: nil,
+  away_goals_result: nil
+)
+fixture.save
+
+fixture = Fixture.new(
+  date:
+  match_week: 9,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Aston Villa"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Tottenham"),
+  home_goals_result: nil,
+  away_goals_result: nil
+)
+fixture.save
+
+fixture = Fixture.new(
+  date:
+  match_week: 9,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Arsenal"),
   away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Leicester"),
   home_goals_result: nil,
   away_goals_result: nil
