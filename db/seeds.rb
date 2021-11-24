@@ -34,7 +34,7 @@ puts "Created two owners..."
   user.save
 end
 
-puts "Created 12 random members..."
+puts "Created 12 random users..."
 
 league = League.new(league_name: "Premier League")
 league.save
@@ -65,33 +65,41 @@ community.save
 
 puts "Created two communities"
 
+exact = rand(0..12)
+fuzzy = rand(0..(12 - exact))
+
 member = Member.new(
   user_id: 1,
   community_id: 1,
-  overall_exact: 0,
-  overall_fuzzy: 0,
-  overall_points: 0
+  overall_exact: exact,
+  overall_fuzzy: fuzzy,
+  overall_points: (exact * 3) + fuzzy
 )
 member.save
+
+exact = rand(0..12)
+fuzzy = rand(0..(12 - exact))
 
 member = Member.new(
   user_id: 2,
   community_id: 2,
-  overall_exact: 0,
-  overall_fuzzy: 0,
-  overall_points: 0
+  overall_exact: exact,
+  overall_fuzzy: fuzzy,
+  overall_points: (exact * 3) + fuzzy
 )
 member.save
 
 puts "Added owners as members"
 
 (3..8).each do |id|
+  exact = rand(0..12)
+  fuzzy = rand(0..(12-exact))
   member = Member.new(
     user_id: id,
     community_id: 1,
-    overall_exact: 0,
-    overall_fuzzy: 0,
-    overall_points: 0
+    overall_exact: exact,
+    overall_fuzzy: fuzzy,
+    overall_points: (exact * 3) + fuzzy
   )
   member.save
 end
@@ -99,12 +107,14 @@ end
 puts "Populated first community"
 
 (9..14).each do |id|
+  exact = rand(0..6)
+  fuzzy = fuzzy = rand(0..(12-exact))
   member = Member.new(
     user_id: id,
     community_id: 2,
-    overall_exact: 0,
-    overall_fuzzy: 0,
-    overall_points: 0
+    overall_exact: exact,
+    overall_fuzzy: fuzzy,
+    overall_points: (exact * 3) + fuzzy
   )
   member.save
 end
@@ -882,3 +892,7 @@ fixture.save
 puts "Created Bundesliga fixtures..."
 puts
 puts "Complete!"
+
+# Community LeWagoneers Member guesses
+
+# Community TheBorcherts Member guesses
