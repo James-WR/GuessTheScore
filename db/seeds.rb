@@ -52,7 +52,7 @@ puts "Created three leagues..."
 community = Community.new(
   community_name: "LeWagoneers",
   join_code: "dbd259353aeb5c8ccdb39e4aedb5ef88ab4e0a78d3e6b5fb08146f0f02bbb051",
-  owner_id: 1,
+  owner_id: user.id,
   league_id: 1
 )
 community.save
