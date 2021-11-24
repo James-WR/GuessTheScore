@@ -181,7 +181,7 @@ end
 # premier league fixtures
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 0o4,
+  date: "2021-12-04",
   match_week: 15,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "West Ham"),
@@ -193,7 +193,7 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 0o4,
+  date: "2021-12-04",
   match_week: 15,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "Newcastle"),
@@ -205,7 +205,7 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 0o4,
+  date: "2021-12-04",
   match_week: 15,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "Southampton"),
@@ -217,7 +217,7 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 0o4,
+  date: "2021-12-04",
   match_week: 15,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "Wolves"),
@@ -229,7 +229,7 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 0o4,
+  date: "2021-12-04",
   match_week: 15,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "Watford"),
@@ -241,7 +241,7 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 0o5,
+  date: "2021-12-05",
   match_week: 15,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "Leeds"),
@@ -253,7 +253,7 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 0o5,
+  date: "2021-12-05",
   match_week: 15,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "Man United"),
@@ -265,7 +265,7 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 0o5,
+  date: "2021-12-05",
   match_week: 15,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "Tottenham"),
@@ -277,7 +277,7 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 0o5,
+  date: "2021-12-05",
   match_week: 15,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "Aston Villa"),
@@ -291,7 +291,7 @@ fixture.save
 # WSL fixtures
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 11,
+  date: "2021-12-11",
   match_week: 9,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "Reading"),
@@ -303,7 +303,7 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 12,
+  date: "2021-12-12",
   match_week: 9,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "Brighton"),
@@ -315,7 +315,7 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 12,
+  date: "2021-12-12",
   match_week: 9,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "Everton"),
@@ -327,7 +327,7 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 12,
+  date: "2021-12-12",
   match_week: 9,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "Birmingham"),
@@ -339,7 +339,7 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 12,
+  date: "2021-12-12",
   match_week: 9,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "Aston Villa"),
@@ -351,7 +351,7 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 12,
+  date: "2021-12-12",
   match_week: 9,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "Arsenal"),
@@ -365,7 +365,7 @@ fixture.save
 # Bundesliga fixtures
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 0o3,
+  date: "2021-12-03",
   match_week: 15,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "Union Berlin"),
@@ -377,7 +377,7 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 0o4,
+  date: "2021-12-04",
   match_week: 15,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "Leverkusen"),
@@ -389,7 +389,7 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 0o4,
+  date: "2021-12-04",
   match_week: 15,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "Hoffenheim"),
@@ -401,7 +401,7 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 0o4,
+  date: "2021-12-04",
   match_week: 15,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "Mainz"),
@@ -413,7 +413,7 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 0o4,
+  date: "2021-12-04",
   match_week: 15,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "Augsburg"),
@@ -425,7 +425,7 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 0o4,
+  date: "2021-12-04",
   match_week: 15,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "Bielefeld"),
@@ -437,7 +437,7 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 0o4,
+  date: "2021-12-04",
   match_week: 15,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "Dortmund"),
@@ -449,7 +449,7 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 0o5,
+  date: "2021-12-05",
   match_week: 15,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "Stuttgart"),
@@ -461,7 +461,7 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: 2021 - 12 - 0o5,
+  date: "2021-12-05",
   match_week: 15,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
                            team_name: "M'gladbach"),
