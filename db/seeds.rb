@@ -89,7 +89,7 @@ member.save
 
 puts "Added owners as members"
 
-(3..9).each do |id|
+(3..8).each do |id|
   member = Member.new(
     user_id: id,
     community_id: 1,
