@@ -130,7 +130,6 @@ premier_league_array.each do |team|
   team.save
 end
 
-
 wsl_array = ['Arsenal',
              'Aston Villa',
              'Birmingham',
@@ -182,9 +181,10 @@ end
 # premier league fixtures
 
 fixture = Fixture.new(
-  date: ,
+  date: 2021 - 12 - 0o4,
   match_week: 15,
-  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "West Ham"),
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "West Ham"),
   away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Chelsea"),
   home_goals_result: nil,
   away_goals_result: nil
@@ -192,9 +192,10 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: ,
+  date: 2021 - 12 - 0o4,
   match_week: 15,
-  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Newcastle"),
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Newcastle"),
   away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Burnley"),
   home_goals_result: nil,
   away_goals_result: nil
@@ -202,70 +203,84 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date: ,
+  date: 2021 - 12 - 0o4,
   match_week: 15,
-  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Southampton"),
-  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Brighton"),
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Southampton"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Brighton"),
   home_goals_result: nil,
   away_goals_result: nil
 )
 fixture.save
 
 fixture = Fixture.new(
-  date:
+  date: 2021 - 12 - 0o4,
   match_week: 15,
-  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Wolves"),
-  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Liverpool"),
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Wolves"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Liverpool"),
   home_goals_result: nil,
   away_goals_result: nil
 )
 fixture.save
 
 fixture = Fixture.new(
-  date:
+  date: 2021 - 12 - 0o4,
   match_week: 15,
-  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Watford"),
-  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Man City"),
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Watford"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Man City"),
   home_goals_result: nil,
   away_goals_result: nil
 )
 fixture.save
 
 fixture = Fixture.new(
-  date:
+  date: 2021 - 12 - 0o5,
   match_week: 15,
-  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Leeds"),
-  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Brentford"),
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Leeds"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Brentford"),
   home_goals_result: nil,
   away_goals_result: nil
 )
 fixture.save
 
 fixture = Fixture.new(
-  date:
+  date: 2021 - 12 - 0o5,
   match_week: 15,
-  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Man United"),
-  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Crystal Palace"),
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Man United"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Crystal Palace"),
   home_goals_result: nil,
   away_goals_result: nil
 )
 fixture.save
 
 fixture = Fixture.new(
-  date:
+  date: 2021 - 12 - 0o5,
   match_week: 15,
-  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Tottenham"),
-  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Norwich"),
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Tottenham"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Norwich"),
   home_goals_result: nil,
   away_goals_result: nil
 )
 fixture.save
 
 fixture = Fixture.new(
-  date:
+  date: 2021 - 12 - 0o5,
   match_week: 15,
-  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Aston Villa"),
-  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Leicester"),
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Aston Villa"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Leicester"),
   home_goals_result: nil,
   away_goals_result: nil
 )
@@ -274,7 +289,7 @@ fixture.save
 # WSL fixtures
 
 fixture = Fixture.new(
-  date:
+  date: 2021 - 12 - 11,
   match_week: 9,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Reading"),
   away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Chelsea"),
@@ -284,50 +299,58 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date:
+  date: 2021 - 12 - 12,
   match_week: 9,
-  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Brighton"),
-  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Man United"),
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Brighton"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Man United"),
   home_goals_result: nil,
   away_goals_result: nil
 )
 fixture.save
 
 fixture = Fixture.new(
-  date:
+  date: 2021 - 12 - 12,
   match_week: 9,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Everton"),
-  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "West Ham"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "West Ham"),
   home_goals_result: nil,
   away_goals_result: nil
 )
 fixture.save
 
 fixture = Fixture.new(
-  date:
+  date: 2021 - 12 - 12,
   match_week: 9,
-  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Birmingham"),
-  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Man City"),
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Birmingham"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Man City"),
   home_goals_result: nil,
   away_goals_result: nil
 )
 fixture.save
 
 fixture = Fixture.new(
-  date:
+  date: 2021 - 12 - 12,
   match_week: 9,
-  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Aston Villa"),
-  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Tottenham"),
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Aston Villa"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Tottenham"),
   home_goals_result: nil,
   away_goals_result: nil
 )
 fixture.save
 
 fixture = Fixture.new(
-  date:
+  date: 2021 - 12 - 12,
   match_week: 9,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Arsenal"),
-  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Leicester"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Leicester"),
   home_goals_result: nil,
   away_goals_result: nil
 )
@@ -336,9 +359,10 @@ fixture.save
 # Bundesliga fixtures
 
 fixture = Fixture.new(
-  date:
+  date: 2021 - 12 - 0o3,
   match_week: 15,
-  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Union Berlin"),
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Union Berlin"),
   away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Leipzig"),
   home_goals_result: nil,
   away_goals_result: nil
@@ -346,9 +370,10 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date:
+  date: 2021 - 12 - 0o4,
   match_week: 15,
-  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Leverkusen"),
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Leverkusen"),
   away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Fürth"),
   home_goals_result: nil,
   away_goals_result: nil
@@ -356,29 +381,33 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date:
+  date: 2021 - 12 - 0o4,
   match_week: 15,
-  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Hoffenheim"),
-  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Frankfurt"),
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Hoffenheim"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Frankfurt"),
   home_goals_result: nil,
   away_goals_result: nil
 )
 fixture.save
 
 fixture = Fixture.new(
-  date:
+  date: 2021 - 12 - 0o4,
   match_week: 15,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Mainz"),
-  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Wolfsburg"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Wolfsburg"),
   home_goals_result: nil,
   away_goals_result: nil
 )
 fixture.save
 
 fixture = Fixture.new(
-  date:
+  date: 2021 - 12 - 0o4,
   match_week: 15,
-  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Augsburg"),
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Augsburg"),
   away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Bochum"),
   home_goals_result: nil,
   away_goals_result: nil
@@ -386,9 +415,10 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date:
+  date: 2021 - 12 - 0o4,
   match_week: 15,
-  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Bielefeld"),
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Bielefeld"),
   away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Köln"),
   home_goals_result: nil,
   away_goals_result: nil
@@ -396,9 +426,10 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date:
+  date: 2021 - 12 - 0o4,
   match_week: 15,
-  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Dortmund"),
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Dortmund"),
   away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Bayern"),
   home_goals_result: nil,
   away_goals_result: nil
@@ -406,20 +437,24 @@ fixture = Fixture.new(
 fixture.save
 
 fixture = Fixture.new(
-  date:
+  date: 2021 - 12 - 0o5,
   match_week: 15,
-  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Stuttgart"),
-  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Hertha Berlin"),
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Stuttgart"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Hertha Berlin"),
   home_goals_result: nil,
   away_goals_result: nil
 )
 fixture.save
 
 fixture = Fixture.new(
-  date:
+  date: 2021 - 12 - 0o5,
   match_week: 15,
-  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "M'gladbach"),
-  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Freiburg"),
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "M'gladbach"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id,
+                           team_name: "Freiburg"),
   home_goals_result: nil,
   away_goals_result: nil
 )
