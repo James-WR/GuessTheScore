@@ -578,7 +578,205 @@ puts "Created WSL fixtures..."
 
 # Bundesliga match day 12
 
+fixture = Fixture.new(
+  date: "2021-11-19",
+  match_day: 12,
+  home_team: "Augsburg",
+  away_team: "Bayern",
+  home_goals_result: 2,
+  away_goals_result: 1,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Dortmund",
+  away_team: "Stuttgart",
+  home_goals_result: 2,
+  away_goals_result: 1,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Leverkusen",
+  away_team: "Bochum",
+  home_goals_result: 1,
+  away_goals_result: 0,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "M'gladbach",
+  away_team: "Fürth",
+  home_goals_result: 4,
+  away_goals_result: 0,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Hoffenheim",
+  away_team: "Leipzig",
+  home_goals_result: 2,
+  away_goals_result: 0,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Bielefeld",
+  away_team: "Wolfsburg",
+  home_goals_result: 2,
+  away_goals_result: 2,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Union Berlin",
+  away_team: "Hertha Berlin",
+  home_goals_result: 2,
+  away_goals_result: 0,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-21",
+  match_day: 12,
+  home_team: "Freiburg",
+  away_team: "Frankfurt",
+  home_goals_result: 0,
+  away_goals_result: 2,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-21",
+  match_day: 12,
+  home_team: "Mainz",
+  away_team: "Köln",
+  home_goals_result: 1,
+  away_goals_result: 1,
+  league_id: 3
+)
+fixture.save
+
 # Bundesliga Match day 13
+
+fixture = Fixture.new(
+  date: "2021-11-26",
+  match_day: 13,
+  home_team: "Stuttgart",
+  away_team: "Mainz",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-27",
+  match_day: 13,
+  home_team: "Wolfsburg",
+  away_team: "Dortmund",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-27",
+  match_day: 13,
+  home_team: "Hertha Berlin",
+  away_team: "Augsburg",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-27",
+  match_day: 13,
+  home_team: "Köln",
+  away_team: "M'gladbach",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-27",
+  match_day: 13,
+  home_team: "Bochum",
+  away_team: "Freiburg",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-27",
+  match_day: 13,
+  home_team: "Fürth",
+  away_team: "Hoffenheim",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-27",
+  match_day: 13,
+  home_team: "Bayern",
+  away_team: "Bielefeld",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-28",
+  match_day: 13,
+  home_team: "Frankfurt",
+  away_team: "Union Berlin",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-28",
+  match_day: 13,
+  home_team: "Leipzig",
+  away_team: "Leverkusen",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 3
+)
+fixture.save
 
 # Bundesliga match day 14
 
