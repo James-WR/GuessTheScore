@@ -111,9 +111,235 @@ end
 
 puts "Populated second community"
 
+# EPL match_day 12
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Leicester",
+  away_team: "Chelsea",
+  home_goals_result: 0,
+  away_goals_result: 3,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Aston Villa",
+  away_team: "Brighton",
+  home_goals_result: 2,
+  away_goals_result: 0,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Burnley",
+  away_team: "Crystal Palace",
+  home_goals_result: 3,
+  away_goals_result: 3,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Newcastle",
+  away_team: "Brentford",
+  home_goals_result: 3,
+  away_goals_result: 3,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Norwich",
+  away_team: "Southampton",
+  home_goals_result: 2,
+  away_goals_result: 1,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Watford",
+  away_team: "Man United",
+  home_goals_result: 4,
+  away_goals_result: 1,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Wolves",
+  away_team: "West Ham",
+  home_goals_result: 1,
+  away_goals_result: 0,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Liverpool",
+  away_team: "Arsenal",
+  home_goals_result: 4,
+  away_goals_result: 0,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-21",
+  match_day: 12,
+  home_team: "Man City",
+  away_team: "Everton",
+  home_goals_result: 3,
+  away_goals_result: 0,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-21",
+  match_day: 12,
+  home_team: "Tottenham",
+  away_team: "Leeds",
+  home_goals_result: 2,
+  away_goals_result: 1,
+  league_id: 1
+)
+fixture.save
+
+# EPL match_day 13
+
+fixture = Fixture.new(
+  date: "2021-11-27",
+  match_day: 13,
+  home_team: "Arsenal",
+  away_team: "Newcastle",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-27",
+  match_day: 13,
+  home_team: "Crystal Palace",
+  away_team: "Aston Villa",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-27",
+  match_day: 13,
+  home_team: "Liverpool",
+  away_team: "Southampton",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-27",
+  match_day: 13,
+  home_team: "Norwich",
+  away_team: "Wolves",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-27",
+  match_day: 13,
+  home_team: "Brighton",
+  away_team: "Leeds",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-28",
+  match_day: 13,
+  home_team: "Brentford",
+  away_team: "Everton",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-28",
+  match_day: 13,
+  home_team: "Burnley",
+  away_team: "Tottenham",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-28",
+  match_day: 13,
+  home_team: "Leicester",
+  away_team: "Watford",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-28",
+  match_day: 13,
+  home_team: "Man City",
+  away_team: "West Ham",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-28",
+  match_day: 13,
+  home_team: "Chelsea",
+  away_team: "Man United",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.save
+
+
+# EPL match_day 15
+
 fixture = Fixture.new(
   date: "2021-12-04",
-  match_week: 15,
+  match_day: 15,
   home_team: "West Ham",
   away_team: "Chelsea",
   home_goals_result: nil,
@@ -124,7 +350,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-04",
-  match_week: 15,
+  match_day: 15,
   home_team: "Newcastle",
   away_team: "Burnley",
   home_goals_result: nil,
@@ -135,7 +361,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-04",
-  match_week: 15,
+  match_day: 15,
   home_team: "Southampton",
   away_team: "Brighton",
   home_goals_result: nil,
@@ -146,7 +372,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-04",
-  match_week: 15,
+  match_day: 15,
   home_team: "Wolves",
   away_team: "Liverpool",
   home_goals_result: nil,
@@ -157,7 +383,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-04",
-  match_week: 15,
+  match_day: 15,
   home_team: "Watford",
   away_team: "Man City",
   home_goals_result: nil,
@@ -168,7 +394,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-05",
-  match_week: 15,
+  match_day: 15,
   home_team: "Leeds",
   away_team: "Brentford",
   home_goals_result: nil,
@@ -179,7 +405,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-05",
-  match_week: 15,
+  match_day: 15,
   home_team: "Man United",
   away_team: "Crystal Palace",
   home_goals_result: nil,
@@ -190,7 +416,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-05",
-  match_week: 15,
+  match_day: 15,
   home_team: "Tottenham",
   away_team: "Norwich",
   home_goals_result: nil,
@@ -201,7 +427,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-05",
-  match_week: 15,
+  match_day: 15,
   home_team: "Aston Villa",
   away_team: "Leicester",
   home_goals_result: nil,
@@ -212,11 +438,15 @@ fixture.save
 
 puts "Created Premier League fixtures..."
 
-# WSL fixtures
+# WSL match_day 8
+
+
+
+# WSL match_day 9
 
 fixture = Fixture.new(
   date: "2021-12-11",
-  match_week: 9,
+  match_day: 9,
   home_team: "Reading",
   away_team: "Chelsea",
   home_goals_result: nil,
@@ -227,7 +457,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-12",
-  match_week: 9,
+  match_day: 9,
   home_team: "Brighton",
   away_team: "Man United",
   home_goals_result: nil,
@@ -238,7 +468,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-12",
-  match_week: 9,
+  match_day: 9,
   home_team: "Everton",
   away_team: "West Ham",
   home_goals_result: nil,
@@ -249,7 +479,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-12",
-  match_week: 9,
+  match_day: 9,
   home_team: "Birmingham",
   away_team: "Man City",
   home_goals_result: nil,
@@ -260,7 +490,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-12",
-  match_week: 9,
+  match_day: 9,
   home_team: "Aston Villa",
   away_team: "Tottenham",
   home_goals_result: nil,
@@ -271,7 +501,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-12",
-  match_week: 9,
+  match_day: 9,
   home_team: "Arsenal",
   away_team: "Leicester",
   home_goals_result: nil,
@@ -282,11 +512,15 @@ fixture.save
 
 puts "Created WSL fixtures..."
 
-# Bundesliga fixtures
+# Bundesliga match day 12
+
+# Bundesliga Match day 13
+
+# Bundesliga match day 14
 
 fixture = Fixture.new(
   date: "2021-12-03",
-  match_week: 15,
+  match_day: 14,
   home_team: "Union Berlin",
   away_team: "Leipzig",
   home_goals_result: nil,
@@ -297,7 +531,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-04",
-  match_week: 15,
+  match_day: 14,
   home_team: "Leverkusen",
   away_team: "Fürth",
   home_goals_result: nil,
@@ -308,7 +542,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-04",
-  match_week: 15,
+  match_day: 14,
   home_team: "Hoffenheim",
   away_team: "Frankfurt",
   home_goals_result: nil,
@@ -319,7 +553,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-04",
-  match_week: 15,
+  match_day: 14,
   home_team: "Mainz",
   away_team: "Wolfsburg",
   home_goals_result: nil,
@@ -330,7 +564,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-04",
-  match_week: 15,
+  match_day: 14,
   home_team: "Augsburg",
   away_team: "Bochum",
   home_goals_result: nil,
@@ -341,7 +575,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-04",
-  match_week: 15,
+  match_day: 14,
   home_team: "Bielefeld",
   away_team: "Köln",
   home_goals_result: nil,
@@ -352,7 +586,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-04",
-  match_week: 15,
+  match_day: 14,
   home_team: "Dortmund",
   away_team: "Bayern",
   home_goals_result: nil,
@@ -363,7 +597,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-05",
-  match_week: 15,
+  match_day: 14,
   home_team: "Stuttgart",
   away_team: "Hertha Berlin",
   home_goals_result: nil,
@@ -374,7 +608,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-05",
-  match_week: 15,
+  match_day: 14,
   home_team: "M'gladbach",
   away_team: "Freiburg",
   home_goals_result: nil,
