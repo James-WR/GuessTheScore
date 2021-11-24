@@ -440,7 +440,71 @@ puts "Created Premier League fixtures..."
 
 # WSL match_day 8
 
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 8,
+  home_team: "Man City",
+  away_team: "Aston Villa",
+  home_goals_result: 5,
+  away_goals_result: 0,
+  league_id: 2
+)
+fixture.save
 
+fixture = Fixture.new(
+  date: "2021-11-21",
+  match_day: 8,
+  home_team: "Leicester",
+  away_team: "Everton",
+  home_goals_result: 0,
+  away_goals_result: 1,
+  league_id: 2
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-21",
+  match_day: 8,
+  home_team: "Chelsea",
+  away_team: "Birmingham",
+  home_goals_result: 5,
+  away_goals_result: 0,
+  league_id: 2
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-21",
+  match_day: 8,
+  home_team: "Man United",
+  away_team: "Arsenal",
+  home_goals_result: 0,
+  away_goals_result: 2,
+  league_id: 2
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-21",
+  match_day: 8,
+  home_team: "Reading",
+  away_team: "Brighton",
+  home_goals_result: 2,
+  away_goals_result: 0,
+  league_id: 2
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-21",
+  match_day: 8,
+  home_team: "West Ham",
+  away_team: "Tottenham",
+  home_goals_result: 1,
+  away_goals_result: 0,
+  league_id: 2
+)
+fixture.save
 
 # WSL match_day 9
 
