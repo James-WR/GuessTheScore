@@ -1,4 +1,4 @@
 class League < ApplicationRecord
-  has_many :teams
   has_many :communities
+  has_many :fixtures
 end

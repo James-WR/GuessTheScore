@@ -5,6 +5,8 @@ class CreateFixtures < ActiveRecord::Migration[6.0]
       t.integer :home_goals_result
       t.integer :away_goals_result
       t.integer :match_week
+      t.string  :home_team
+      t.string  :away_team
 
       t.timestamps
     end
