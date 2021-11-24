@@ -25,6 +25,8 @@ user = User.new(
 )
 user.save
 
+puts "Created two owners..."
+
 12.times do
   user = User.new(
     first_name: Faker::Name.first_name,
@@ -36,6 +38,8 @@ user.save
   user.save
 end
 
+puts "Created 12 random members..."
+
 league = League.new(league_name: "Premier League")
 league.save
 
@@ -44,6 +48,8 @@ league.save
 
 league = League.new(league_name: "Bundesliga")
 league.save
+
+puts "Created three leagues..."
 
 community = Community.new(
   community_name: "LeWagoneers",
@@ -60,6 +66,8 @@ community = Community.new(
   league_id: 3
 )
 community.save
+
+puts "Created two communities"
 
 member = Member.new(
   user_id: 1,
@@ -79,7 +87,9 @@ member = Member.new(
 )
 member.save
 
-(2..9).each do |id|
+puts "Added owners as members"
+
+(3..9).each do |id|
   member = Member.new(
     user_id: id,
     community_id: 1,
@@ -89,6 +99,8 @@ member.save
   )
   member.save
 end
+
+puts "Populated first community"
 
 (9..14).each do |id|
   member = Member.new(
@@ -100,6 +112,8 @@ end
   )
   member.save
 end
+
+puts "Populated second community"
 
 premier_league_array = ['Arsenal',
                         'Aston Villa',
@@ -130,6 +144,8 @@ premier_league_array.each do |team|
   team.save
 end
 
+puts "Created Premier League teams..."
+
 wsl_array = ['Arsenal',
              'Aston Villa',
              'Birmingham',
@@ -150,6 +166,8 @@ wsl_array.each do |team|
   )
   team.save
 end
+
+puts "Created WSL teams..."
 
 bundesliga_array = ['Bielefeld',
                     'Augsburg',
@@ -178,6 +196,7 @@ bundesliga_array.each do |team|
   team.save
 end
 
+puts "Created Bundesliga teams..."
 # premier league fixtures
 
 fixture = Fixture.new(
@@ -288,6 +307,8 @@ fixture = Fixture.new(
 )
 fixture.save
 
+puts "Created Premier League fixtures..."
+
 # WSL fixtures
 
 fixture = Fixture.new(
@@ -361,6 +382,8 @@ fixture = Fixture.new(
   away_goals_result: nil
 )
 fixture.save
+
+puts "Created WSL fixtures..."
 
 # Bundesliga fixtures
 
@@ -471,3 +494,7 @@ fixture = Fixture.new(
   away_goals_result: nil
 )
 fixture.save
+
+puts "Created Bundesliga fixtures..."
+puts
+puts "Complete!"
