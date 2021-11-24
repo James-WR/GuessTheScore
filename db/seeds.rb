@@ -104,22 +104,22 @@ end
 premier_league_array = ['Arsenal',
                         'Aston Villa',
                         'Brentford',
-                        'Brighton & Hove Albion',
+                        'Brighton',
                         'Burnley',
                         'Chelsea',
                         'Crystal Palace',
                         'Everton',
-                        'Leeds United',
-                        'Leicester City',
+                        'Leeds',
+                        'Leicester',
                         'Liverpool',
-                        'Manchester City',
-                        'Manchester United',
-                        'Newcastle United',
-                        'Norwich City',
+                        'Man City',
+                        'Man United',
+                        'Newcastle',
+                        'Norwich',
                         'Southampton',
-                        'Tottenham Hotspur',
+                        'Tottenham',
                         'Watford',
-                        'West Ham United',
+                        'West Ham',
                         'Wolves']
 
 premier_league_array.each do |team|
@@ -133,16 +133,16 @@ end
 
 wsl_array = ['Arsenal',
              'Aston Villa',
-             'Birmingham City',
-             'Brighton & Hove Albion',
+             'Birmingham',
+             'Brighton',
              'Chelsea',
              'Everton',
-             'Leicester City',
-             'Manchester City',
-             'Manchester United',
+             'Leicester',
+             'Man City',
+             'Man United',
              'Reading',
-             'Tottenham Hotspur',
-             'West Ham United']
+             'Tottenham',
+             'West Ham']
 
 wsl_array.each do |team|
   team = Team.new(
@@ -152,7 +152,7 @@ wsl_array.each do |team|
   team.save
 end
 
-bundesliga_array = ['1. FC Köln',
+bundesliga_array = ['FC Köln',
                     '1899 Hoffenheim',
                     'Bayer Leverkusen',
                     'Bayern Munich',
@@ -183,8 +183,8 @@ end
 fixture = Fixture.new(
   date: ,
   match_week: 15,
-  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "West Ham United"),
-  away_team_id: Team.where(league_id: community.league_id)["Chelsea"],
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "West Ham"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Chelsea"),
   home_goals_result: nil,
   away_goals_result: nil
 )
@@ -193,8 +193,8 @@ fixture.save
 fixture = Fixture.new(
   date: ,
   match_week: 15,
-  home_team_id: premier_league_array["Newcastle United"] + 1,
-  away_team_id: premier_league_array["Burnley"] + 1,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Newcastle"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Burnley"),
   home_goals_result: nil,
   away_goals_result: nil
 )
@@ -203,8 +203,8 @@ fixture.save
 fixture = Fixture.new(
   date: ,
   match_week: 15,
-  home_team_id: premier_league_array["Southampton"] + 1,
-  away_team_id: premier_league_array["Brighton & Hove Albion"] + 1,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Southampton"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Brighton"),
   home_goals_result: nil,
   away_goals_result: nil
 )
@@ -213,8 +213,8 @@ fixture.save
 fixture = Fixture.new(
   date:
   match_week: 15,
-  home_team_id: premier_league_array["Wolves"] + 1,
-  away_team_id: premier_league_array["Liverpool"] + 1,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Wolves"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Liverpool"),
   home_goals_result: nil,
   away_goals_result: nil
 )
@@ -223,8 +223,8 @@ fixture.save
 fixture = Fixture.new(
   date:
   match_week: 15,
-  home_team_id: premier_league_array["Watford"] + 1,
-  away_team_id: premier_league_array["Manchester City"] + 1,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Watford"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Man City"),
   home_goals_result: nil,
   away_goals_result: nil
 )
@@ -233,8 +233,8 @@ fixture.save
 fixture = Fixture.new(
   date:
   match_week: 15,
-  home_team_id: premier_league_array["Leeds United"] + 1,
-  away_team_id: premier_league_array["Brentford"] + 1,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Leeds"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Brentford"),
   home_goals_result: nil,
   away_goals_result: nil
 )
@@ -243,8 +243,8 @@ fixture.save
 fixture = Fixture.new(
   date:
   match_week: 15,
-  home_team_id: premier_league_array["Manchester United"] + 1,
-  away_team_id: premier_league_array["Crystal Palace"] + 1,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Man United"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Crystal Palace"),
   home_goals_result: nil,
   away_goals_result: nil
 )
@@ -253,8 +253,8 @@ fixture.save
 fixture = Fixture.new(
   date:
   match_week: 15,
-  home_team_id: premier_league_array["Tottenham Hotspur"] + 1,
-  away_team_id: premier_league_array["Norwich City"] + 1,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Tottenham"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Norwich"),
   home_goals_result: nil,
   away_goals_result: nil
 )
@@ -263,8 +263,8 @@ fixture.save
 fixture = Fixture.new(
   date:
   match_week: 15,
-  home_team_id: premier_league_array["Aston Villa"] + 1,
-  away_team_id: premier_league_array["Leicester"] + 1,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Aston Villa"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Leicester"),
   home_goals_result: nil,
   away_goals_result: nil
 )
