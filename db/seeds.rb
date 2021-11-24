@@ -5,23 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-user = User.new(
+user = User.create(
   first_name: "John",
   last_name: "Smith",
   username: "jsmith",
   email: "jsmith@gmail.com",
   password: "123456"
 )
-user.save
-
-user = User.new(
+# user.save
+p user
+user = User.create(
   first_name: "Alicia",
   last_name: "Borchert",
   username: "aborchert",
   email: "aborchert@gmail.com",
   password: "123456"
 )
-user.save
+# user.save
 
 puts "Created two owners..."
 
