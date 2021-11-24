@@ -890,9 +890,79 @@ fixture = Fixture.new(
 fixture.save
 
 puts "Created Bundesliga fixtures..."
+
+# Community LeWagoneers Member guesses Match day 12
+Fixture.where(league_id: 1, match_day: 12).each do |fixture|
+  (3..8).each do |id|
+      MemberGuess.create(
+      home_goals_guess: rand(0..4),
+      away_goals_guess: rand(0..4),
+      member_id: id,
+      fixture_id: fixture.id
+    )
+  end
+end
+
+# Community LeWagoneers Member guesses Match day 13
+Fixture.where(league_id: 1, match_day: 13).each do |fixture|
+  (3..8).each do |id|
+      MemberGuess.create(
+      home_goals_guess: rand(0..4),
+      away_goals_guess: rand(0..4),
+      member_id: id,
+      fixture_id: fixture.id
+    )
+  end
+end
+
+# Community LeWagoneers Member guesses Match day 15
+Fixture.where(league_id: 1, match_day: 15).each do |fixture|
+  (3..8).each do |id|
+      MemberGuess.create(
+      home_goals_guess: rand(0..4),
+      away_goals_guess: rand(0..4),
+      member_id: id,
+      fixture_id: fixture.id
+    )
+  end
+end
+
+puts "Generated member guesses for LeWagoneers..."
+
+# Community TheBorcherts Member guesses Match day 12
+Fixture.where(league_id: 3, match_day: 12).each do |fixture|
+  (9..14).each do |id|
+      MemberGuess.create(
+      home_goals_guess: rand(0..4),
+      away_goals_guess: rand(0..4),
+      member_id: id,
+      fixture_id: fixture.id
+    )
+  end
+end
+# Community TheBorcherts Member guesses Match day 13
+Fixture.where(league_id: 3, match_day: 13).each do |fixture|
+  (9..14).each do |id|
+      MemberGuess.create(
+      home_goals_guess: rand(0..4),
+      away_goals_guess: rand(0..4),
+      member_id: id,
+      fixture_id: fixture.id
+    )
+  end
+end
+# Community TheBorcherts Member guesses Match day 14
+Fixture.where(league_id: 3, match_day: 14).each do |fixture|
+  (9..14).each do |id|
+      MemberGuess.create(
+      home_goals_guess: rand(0..4),
+      away_goals_guess: rand(0..4),
+      member_id: id,
+      fixture_id: fixture.id
+    )
+  end
+end
+
+puts "Generated member guesses for TheBorcherts..."
 puts
 puts "Complete!"
-
-# Community LeWagoneers Member guesses
-
-# Community TheBorcherts Member guesses
