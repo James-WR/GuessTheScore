@@ -1,1 +1,11 @@
-<h1>Testing</h1>
+<h1>Communities Index</h1>
+
+<li>
+  <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+</li>
+
+<ul>
+  <li><% @communities.each do |community| %></li>
+  <li><%= link_to community.community_name, community_path(community) %> </li>
+  <li><% end %></li>
+</ul>
