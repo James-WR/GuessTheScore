@@ -12,8 +12,7 @@ user = User.create(
   email: "jsmith@gmail.com",
   password: "123456"
 )
-# user.save
-p user
+
 user = User.create(
   first_name: "Alicia",
   last_name: "Borchert",
@@ -21,7 +20,6 @@ user = User.create(
   email: "aborchert@gmail.com",
   password: "123456"
 )
-# user.save
 
 puts "Created two owners..."
 
