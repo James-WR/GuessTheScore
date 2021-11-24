@@ -152,24 +152,24 @@ wsl_array.each do |team|
   team.save
 end
 
-bundesliga_array = ['FC Köln',
-                    '1899 Hoffenheim',
-                    'Bayer Leverkusen',
-                    'Bayern Munich',
-                    'Borussia Dortmund',
-                    'Borussia Mönchengladbach',
-                    'Eintracht Frankfurt',
-                    'FC Augsburg',
-                    'Hamburger SV',
-                    'Hannover 96',
-                    'Hertha BSC',
-                    'Mainz 05',
-                    'RB Leipzig',
-                    'SC Freiburg',
-                    'Schalke 04',
-                    'VfB Stuttgart',
-                    'VfL Wolfsburg',
-                    'Werder Bremen']
+bundesliga_array = ['Bielefeld',
+                    'Augsburg',
+                    'Leverkusen',
+                    'Bayern',
+                    'Bochum',
+                    'Dortmund',
+                    "M'gladbach",
+                    'Frankfurt',
+                    'Freiburg',
+                    'Fürth',
+                    'Hertha Berlin',
+                    'Hoffenheim',
+                    'Köln',
+                    'Leipzig',
+                    'Mainz',
+                    'Stuttgart',
+                    'Union Berlin',
+                    'Wolfsburg']
 
 bundesliga_array.each do |team|
   team = Team.new(
@@ -328,6 +328,98 @@ fixture = Fixture.new(
   match_week: 9,
   home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Arsenal"),
   away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Leicester"),
+  home_goals_result: nil,
+  away_goals_result: nil
+)
+fixture.save
+
+# Bundesliga fixtures
+
+fixture = Fixture.new(
+  date:
+  match_week: 15,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Union Berlin"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Leipzig"),
+  home_goals_result: nil,
+  away_goals_result: nil
+)
+fixture.save
+
+fixture = Fixture.new(
+  date:
+  match_week: 15,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Leverkusen"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Fürth"),
+  home_goals_result: nil,
+  away_goals_result: nil
+)
+fixture.save
+
+fixture = Fixture.new(
+  date:
+  match_week: 15,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Hoffenheim"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Frankfurt"),
+  home_goals_result: nil,
+  away_goals_result: nil
+)
+fixture.save
+
+fixture = Fixture.new(
+  date:
+  match_week: 15,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Mainz"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Wolfsburg"),
+  home_goals_result: nil,
+  away_goals_result: nil
+)
+fixture.save
+
+fixture = Fixture.new(
+  date:
+  match_week: 15,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Augsburg"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Bochum"),
+  home_goals_result: nil,
+  away_goals_result: nil
+)
+fixture.save
+
+fixture = Fixture.new(
+  date:
+  match_week: 15,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Bielefeld"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Köln"),
+  home_goals_result: nil,
+  away_goals_result: nil
+)
+fixture.save
+
+fixture = Fixture.new(
+  date:
+  match_week: 15,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Dortmund"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Bayern"),
+  home_goals_result: nil,
+  away_goals_result: nil
+)
+fixture.save
+
+fixture = Fixture.new(
+  date:
+  match_week: 15,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Stuttgart"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Hertha Berlin"),
+  home_goals_result: nil,
+  away_goals_result: nil
+)
+fixture.save
+
+fixture = Fixture.new(
+  date:
+  match_week: 15,
+  home_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "M'gladbach"),
+  away_team_id: Team.where(league_id: Community.find_by(community_name: "LeWagoneers").league_id, team_name: "Freiburg"),
   home_goals_result: nil,
   away_goals_result: nil
 )
