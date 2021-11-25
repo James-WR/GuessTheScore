@@ -1,14 +1,16 @@
 <table> Weekly Results
   <tr>
+    <th>Rank</th>
     <th>Name</th>
     <th>Exact</th>
     <th>Fuzzy</th>
     <th>Points</th>
   </tr>
-   <% @sorted_members.each do |member| %>
-      <tr><td><%= member.user.first_name %></td>
-      <td><%= member.overall_exact %></td>
-      <td><%= member.overall_fuzzy %></td>
-      <td><%= member.overall_points %></td></tr>
+   <% @sorted_weekly.each_with_index do |member, index| %>
+      <tr><td><%= index + 1%></td>
+      <td><%= member.user.first_name %></td>
+      <td><%= member.weekly_exact %></td>
+      <td><%= member.weekly_fuzzy %></td>
+      <td><%= member.weekly_points %></td></tr>
     <% end %>
 </table>
