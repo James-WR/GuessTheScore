@@ -1,0 +1,7 @@
+<%= simple_form_for [@fixture, @team, @member_guess] do |f| %>
+  <%= f.label :team = Team.find(Fixture.first.home_team_id)[:team_name] %>
+  <%= f.input :home_goals_guess, as: :numeric%>
+  <%= f.label :team = Team.find(Fixture.first.away_team_id)[:team_name] %>
+  <%= f.input :away_goals_guess, as: :numeric%>
+  <%= f.submit %>
+<% end %>
