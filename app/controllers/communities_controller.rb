@@ -26,4 +26,18 @@ class CommunitiesController < ApplicationController
     end
     @sorted_weekly = @community.members.order(weekly_points: :desc, weekly_exact: :desc, weekly_fuzzy: :desc)
   end
+
+  def new
+    @community = Community.new
+    @league_names = League.all.map do |league|
+      league.league_name
+    end
+  end
+
+  def create
+    @community = Community.new(community_params)
+    @community.user_id = current_user.id
+    @community.save!
+    redirect_to community_path(@community)
+  end
 end
