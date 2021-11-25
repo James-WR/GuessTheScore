@@ -34,7 +34,7 @@ puts "Created two owners..."
   user.save
 end
 
-puts "Created 12 random members..."
+puts "Created 12 random users..."
 
 league = League.new(league_name: "Premier League")
 league.save
@@ -65,33 +65,41 @@ community.save
 
 puts "Created two communities"
 
+exact = rand(0..12)
+fuzzy = rand(0..(12 - exact))
+
 member = Member.new(
   user_id: 1,
   community_id: 1,
-  overall_exact: 0,
-  overall_fuzzy: 0,
-  overall_points: 0
+  overall_exact: exact,
+  overall_fuzzy: fuzzy,
+  overall_points: (exact * 3) + fuzzy
 )
 member.save
+
+exact = rand(0..12)
+fuzzy = rand(0..(12 - exact))
 
 member = Member.new(
   user_id: 2,
   community_id: 2,
-  overall_exact: 0,
-  overall_fuzzy: 0,
-  overall_points: 0
+  overall_exact: exact,
+  overall_fuzzy: fuzzy,
+  overall_points: (exact * 3) + fuzzy
 )
 member.save
 
 puts "Added owners as members"
 
 (3..8).each do |id|
+  exact = rand(0..12)
+  fuzzy = rand(0..(12-exact))
   member = Member.new(
     user_id: id,
     community_id: 1,
-    overall_exact: 0,
-    overall_fuzzy: 0,
-    overall_points: 0
+    overall_exact: exact,
+    overall_fuzzy: fuzzy,
+    overall_points: (exact * 3) + fuzzy
   )
   member.save
 end
@@ -99,398 +107,899 @@ end
 puts "Populated first community"
 
 (9..14).each do |id|
+  exact = rand(0..6)
+  fuzzy = fuzzy = rand(0..(12-exact))
   member = Member.new(
     user_id: id,
     community_id: 2,
-    overall_exact: 0,
-    overall_fuzzy: 0,
-    overall_points: 0
+    overall_exact: exact,
+    overall_fuzzy: fuzzy,
+    overall_points: (exact * 3) + fuzzy
   )
   member.save
 end
 
 puts "Populated second community"
 
-premier_league_array = ['Arsenal',
-                        'Aston Villa',
-                        'Brentford',
-                        'Brighton',
-                        'Burnley',
-                        'Chelsea',
-                        'Crystal Palace',
-                        'Everton',
-                        'Leeds',
-                        'Leicester',
-                        'Liverpool',
-                        'Man City',
-                        'Man United',
-                        'Newcastle',
-                        'Norwich',
-                        'Southampton',
-                        'Tottenham',
-                        'Watford',
-                        'West Ham',
-                        'Wolves']
+# EPL match_day 12
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Leicester",
+  away_team: "Chelsea",
+  home_goals_result: 0,
+  away_goals_result: 3,
+  league_id: 1
+)
+fixture.save
 
-premier_league_array.each do |team|
-  team = Team.new(
-    team_name: team,
-    league_id: 1
-  )
-  team.save
-end
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Aston Villa",
+  away_team: "Brighton",
+  home_goals_result: 2,
+  away_goals_result: 0,
+  league_id: 1
+)
+fixture.save
 
-puts "Created Premier League teams..."
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Burnley",
+  away_team: "Crystal Palace",
+  home_goals_result: 3,
+  away_goals_result: 3,
+  league_id: 1
+)
+fixture.save
 
-wsl_array = ['Arsenal',
-             'Aston Villa',
-             'Birmingham',
-             'Brighton',
-             'Chelsea',
-             'Everton',
-             'Leicester',
-             'Man City',
-             'Man United',
-             'Reading',
-             'Tottenham',
-             'West Ham']
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Newcastle",
+  away_team: "Brentford",
+  home_goals_result: 3,
+  away_goals_result: 3,
+  league_id: 1
+)
+fixture.save
 
-wsl_array.each do |team|
-  team = Team.new(
-    team_name: team,
-    league_id: 2
-  )
-  team.save
-end
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Norwich",
+  away_team: "Southampton",
+  home_goals_result: 2,
+  away_goals_result: 1,
+  league_id: 1
+)
+fixture.save
 
-puts "Created WSL teams..."
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Watford",
+  away_team: "Man United",
+  home_goals_result: 4,
+  away_goals_result: 1,
+  league_id: 1
+)
+fixture.save
 
-bundesliga_array = ['Bielefeld',
-                    'Augsburg',
-                    'Leverkusen',
-                    'Bayern',
-                    'Bochum',
-                    'Dortmund',
-                    "M'gladbach",
-                    'Frankfurt',
-                    'Freiburg',
-                    'Fürth',
-                    'Hertha Berlin',
-                    'Hoffenheim',
-                    'Köln',
-                    'Leipzig',
-                    'Mainz',
-                    'Stuttgart',
-                    'Union Berlin',
-                    'Wolfsburg']
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Wolves",
+  away_team: "West Ham",
+  home_goals_result: 1,
+  away_goals_result: 0,
+  league_id: 1
+)
+fixture.save
 
-bundesliga_array.each do |team|
-  team = Team.new(
-    team_name: team,
-    league_id: 3
-  )
-  team.save
-end
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Liverpool",
+  away_team: "Arsenal",
+  home_goals_result: 4,
+  away_goals_result: 0,
+  league_id: 1
+)
+fixture.save
 
-puts "Created Bundesliga teams..."
-# premier league fixtures
+fixture = Fixture.new(
+  date: "2021-11-21",
+  match_day: 12,
+  home_team: "Man City",
+  away_team: "Everton",
+  home_goals_result: 3,
+  away_goals_result: 0,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-21",
+  match_day: 12,
+  home_team: "Tottenham",
+  away_team: "Leeds",
+  home_goals_result: 2,
+  away_goals_result: 1,
+  league_id: 1
+)
+fixture.save
+
+# EPL match_day 13
+
+fixture = Fixture.new(
+  date: "2021-11-27",
+  match_day: 13,
+  home_team: "Arsenal",
+  away_team: "Newcastle",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-27",
+  match_day: 13,
+  home_team: "Crystal Palace",
+  away_team: "Aston Villa",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-27",
+  match_day: 13,
+  home_team: "Liverpool",
+  away_team: "Southampton",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-27",
+  match_day: 13,
+  home_team: "Norwich",
+  away_team: "Wolves",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-27",
+  match_day: 13,
+  home_team: "Brighton",
+  away_team: "Leeds",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-28",
+  match_day: 13,
+  home_team: "Brentford",
+  away_team: "Everton",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-28",
+  match_day: 13,
+  home_team: "Burnley",
+  away_team: "Tottenham",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-28",
+  match_day: 13,
+  home_team: "Leicester",
+  away_team: "Watford",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-28",
+  match_day: 13,
+  home_team: "Man City",
+  away_team: "West Ham",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-28",
+  match_day: 13,
+  home_team: "Chelsea",
+  away_team: "Man United",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.save
+
+
+# EPL match_day 15
 
 fixture = Fixture.new(
   date: "2021-12-04",
-  match_week: 15,
-  home_team_id: Team.where(league_id: 1,
-                           team_name: "West Ham").pluck(:id).first,
-  away_team_id: Team.where(league_id: 1,
-                           team_name: "Chelsea").pluck(:id).first,
+  match_day: 15,
+  home_team: "West Ham",
+  away_team: "Chelsea",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 1
 )
 fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-04",
-  match_week: 15,
-  home_team_id: Team.where(league_id: 1,
-                           team_name: "Newcastle").pluck(:id).first,
-  away_team_id: Team.where(league_id: 1,
-                           team_name: "Burnley").pluck(:id).first,
+  match_day: 15,
+  home_team: "Newcastle",
+  away_team: "Burnley",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 1
 )
 fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-04",
-  match_week: 15,
-  home_team_id: Team.where(league_id: 1,
-                           team_name: "Southampton").pluck(:id).first,
-  away_team_id: Team.where(league_id: 1,
-                           team_name: "Brighton").pluck(:id).first,
+  match_day: 15,
+  home_team: "Southampton",
+  away_team: "Brighton",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 1
 )
 fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-04",
-  match_week: 15,
-  home_team_id: Team.where(league_id: 1,
-                           team_name: "Wolves").pluck(:id).first,
-  away_team_id: Team.where(league_id: 1,
-                           team_name: "Liverpool").pluck(:id).first,
+  match_day: 15,
+  home_team: "Wolves",
+  away_team: "Liverpool",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 1
 )
 fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-04",
-  match_week: 15,
-  home_team_id: Team.where(league_id: 1,
-                           team_name: "Watford").pluck(:id).first,
-  away_team_id: Team.where(league_id: 1,
-                           team_name: "Man City").pluck(:id).first,
+  match_day: 15,
+  home_team: "Watford",
+  away_team: "Man City",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 1
 )
 fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-05",
-  match_week: 15,
-  home_team_id: Team.where(league_id: 1,
-                           team_name: "Leeds").pluck(:id).first,
-  away_team_id: Team.where(league_id: 1,
-                           team_name: "Brentford").pluck(:id).first,
+  match_day: 15,
+  home_team: "Leeds",
+  away_team: "Brentford",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 1
 )
 fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-05",
-  match_week: 15,
-  home_team_id: Team.where(league_id: 1,
-                           team_name: "Man United").pluck(:id).first,
-  away_team_id: Team.where(league_id: 1,
-                           team_name: "Crystal Palace").pluck(:id).first,
+  match_day: 15,
+  home_team: "Man United",
+  away_team: "Crystal Palace",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 1
 )
 fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-05",
-  match_week: 15,
-  home_team_id: Team.where(league_id: 1,
-                           team_name: "Tottenham").pluck(:id).first,
-  away_team_id: Team.where(league_id: 1,
-                           team_name: "Norwich").pluck(:id).first,
+  match_day: 15,
+  home_team: "Tottenham",
+  away_team: "Norwich",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 1
 )
 fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-05",
-  match_week: 15,
-  home_team_id: Team.where(league_id: 1,
-                           team_name: "Aston Villa").pluck(:id).first,
-  away_team_id: Team.where(league_id: 1,
-                           team_name: "Leicester").pluck(:id).first,
+  match_day: 15,
+  home_team: "Aston Villa",
+  away_team: "Leicester",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 1
 )
 fixture.save
 
 puts "Created Premier League fixtures..."
 
-# WSL fixtures
+# WSL match_day 8
+
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 8,
+  home_team: "Man City",
+  away_team: "Aston Villa",
+  home_goals_result: 5,
+  away_goals_result: 0,
+  league_id: 2
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-21",
+  match_day: 8,
+  home_team: "Leicester",
+  away_team: "Everton",
+  home_goals_result: 0,
+  away_goals_result: 1,
+  league_id: 2
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-21",
+  match_day: 8,
+  home_team: "Chelsea",
+  away_team: "Birmingham",
+  home_goals_result: 5,
+  away_goals_result: 0,
+  league_id: 2
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-21",
+  match_day: 8,
+  home_team: "Man United",
+  away_team: "Arsenal",
+  home_goals_result: 0,
+  away_goals_result: 2,
+  league_id: 2
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-21",
+  match_day: 8,
+  home_team: "Reading",
+  away_team: "Brighton",
+  home_goals_result: 2,
+  away_goals_result: 0,
+  league_id: 2
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-21",
+  match_day: 8,
+  home_team: "West Ham",
+  away_team: "Tottenham",
+  home_goals_result: 1,
+  away_goals_result: 0,
+  league_id: 2
+)
+fixture.save
+
+# WSL match_day 9
 
 fixture = Fixture.new(
   date: "2021-12-11",
-  match_week: 9,
-  home_team_id: Team.where(league_id: 2,
-                           team_name: "Reading").pluck(:id).first,
-  away_team_id: Team.where(league_id: 2,
-                           team_name: "Chelsea").pluck(:id).first,
+  match_day: 9,
+  home_team: "Reading",
+  away_team: "Chelsea",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 2
 )
 fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-12",
-  match_week: 9,
-  home_team_id: Team.where(league_id: 2,
-                           team_name: "Brighton").pluck(:id).first,
-  away_team_id: Team.where(league_id: 2,
-                           team_name: "Man United").pluck(:id).first,
+  match_day: 9,
+  home_team: "Brighton",
+  away_team: "Man United",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 2
 )
 fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-12",
-  match_week: 9,
-  home_team_id: Team.where(league_id: 2,
-                           team_name: "Everton").pluck(:id).first,
-  away_team_id: Team.where(league_id: 2,
-                           team_name: "West Ham").pluck(:id).first,
+  match_day: 9,
+  home_team: "Everton",
+  away_team: "West Ham",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 2
 )
 fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-12",
-  match_week: 9,
-  home_team_id: Team.where(league_id: 2,
-                           team_name: "Birmingham").pluck(:id).first,
-  away_team_id: Team.where(league_id: 2,
-                           team_name: "Man City").pluck(:id).first,
+  match_day: 9,
+  home_team: "Birmingham",
+  away_team: "Man City",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 2
 )
 fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-12",
-  match_week: 9,
-  home_team_id: Team.where(league_id: 2,
-                           team_name: "Aston Villa").pluck(:id).first,
-  away_team_id: Team.where(league_id: 2,
-                           team_name: "Tottenham").pluck(:id).first,
+  match_day: 9,
+  home_team: "Aston Villa",
+  away_team: "Tottenham",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 2
 )
 fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-12",
-  match_week: 9,
-  home_team_id: Team.where(league_id: 2,
-                           team_name: "Arsenal").pluck(:id).first,
-  away_team_id: Team.where(league_id: 2,
-                           team_name: "Leicester").pluck(:id).first,
+  match_day: 9,
+  home_team: "Arsenal",
+  away_team: "Leicester",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 2
 )
 fixture.save
 
 puts "Created WSL fixtures..."
 
-# Bundesliga fixtures
+# Bundesliga match day 12
+
+fixture = Fixture.new(
+  date: "2021-11-19",
+  match_day: 12,
+  home_team: "Augsburg",
+  away_team: "Bayern",
+  home_goals_result: 2,
+  away_goals_result: 1,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Dortmund",
+  away_team: "Stuttgart",
+  home_goals_result: 2,
+  away_goals_result: 1,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Leverkusen",
+  away_team: "Bochum",
+  home_goals_result: 1,
+  away_goals_result: 0,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "M'gladbach",
+  away_team: "Fürth",
+  home_goals_result: 4,
+  away_goals_result: 0,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Hoffenheim",
+  away_team: "Leipzig",
+  home_goals_result: 2,
+  away_goals_result: 0,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Bielefeld",
+  away_team: "Wolfsburg",
+  home_goals_result: 2,
+  away_goals_result: 2,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-20",
+  match_day: 12,
+  home_team: "Union Berlin",
+  away_team: "Hertha Berlin",
+  home_goals_result: 2,
+  away_goals_result: 0,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-21",
+  match_day: 12,
+  home_team: "Freiburg",
+  away_team: "Frankfurt",
+  home_goals_result: 0,
+  away_goals_result: 2,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-21",
+  match_day: 12,
+  home_team: "Mainz",
+  away_team: "Köln",
+  home_goals_result: 1,
+  away_goals_result: 1,
+  league_id: 3
+)
+fixture.save
+
+# Bundesliga Match day 13
+
+fixture = Fixture.new(
+  date: "2021-11-26",
+  match_day: 13,
+  home_team: "Stuttgart",
+  away_team: "Mainz",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-27",
+  match_day: 13,
+  home_team: "Wolfsburg",
+  away_team: "Dortmund",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-27",
+  match_day: 13,
+  home_team: "Hertha Berlin",
+  away_team: "Augsburg",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-27",
+  match_day: 13,
+  home_team: "Köln",
+  away_team: "M'gladbach",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-27",
+  match_day: 13,
+  home_team: "Bochum",
+  away_team: "Freiburg",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-27",
+  match_day: 13,
+  home_team: "Fürth",
+  away_team: "Hoffenheim",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-27",
+  match_day: 13,
+  home_team: "Bayern",
+  away_team: "Bielefeld",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-28",
+  match_day: 13,
+  home_team: "Frankfurt",
+  away_team: "Union Berlin",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 3
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-28",
+  match_day: 13,
+  home_team: "Leipzig",
+  away_team: "Leverkusen",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 3
+)
+fixture.save
+
+# Bundesliga match day 14
 
 fixture = Fixture.new(
   date: "2021-12-03",
-  match_week: 15,
-  home_team_id: Team.where(league_id: 3,
-                           team_name: "Union Berlin").pluck(:id).first,
-  away_team_id: Team.where(league_id: 3,
-                           team_name: "Leipzig").pluck(:id).first,
+  match_day: 14,
+  home_team: "Union Berlin",
+  away_team: "Leipzig",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 3
 )
 fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-04",
-  match_week: 15,
-  home_team_id: Team.where(league_id: 3,
-                           team_name: "Leverkusen").pluck(:id).first,
-  away_team_id: Team.where(league_id: 3,
-                           team_name: "Fürth").pluck(:id).first,
+  match_day: 14,
+  home_team: "Leverkusen",
+  away_team: "Fürth",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 3
 )
 fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-04",
-  match_week: 15,
-  home_team_id: Team.where(league_id: 3,
-                           team_name: "Hoffenheim").pluck(:id).first,
-  away_team_id: Team.where(league_id: 3,
-                           team_name: "Frankfurt").pluck(:id).first,
+  match_day: 14,
+  home_team: "Hoffenheim",
+  away_team: "Frankfurt",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 3
 )
 fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-04",
-  match_week: 15,
-  home_team_id: Team.where(league_id: 3,
-                           team_name: "Mainz").pluck(:id).first,
-  away_team_id: Team.where(league_id: 3,
-                           team_name: "Wolfsburg").pluck(:id).first,
+  match_day: 14,
+  home_team: "Mainz",
+  away_team: "Wolfsburg",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 3
 )
 fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-04",
-  match_week: 15,
-  home_team_id: Team.where(league_id: 3,
-                           team_name: "Augsburg").pluck(:id).first,
-  away_team_id: Team.where(league_id: 3,
-                           team_name: "Bochum").pluck(:id).first,
+  match_day: 14,
+  home_team: "Augsburg",
+  away_team: "Bochum",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 3
 )
 fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-04",
-  match_week: 15,
-  home_team_id: Team.where(league_id: 3,
-                           team_name: "Bielefeld").pluck(:id).first,
-  away_team_id: Team.where(league_id: 3,
-                           team_name: "Köln").pluck(:id).first,
+  match_day: 14,
+  home_team: "Bielefeld",
+  away_team: "Köln",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 3
 )
 fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-04",
-  match_week: 15,
-  home_team_id: Team.where(league_id: 3,
-                           team_name: "Dortmund").pluck(:id).first,
-  away_team_id: Team.where(league_id: 3,
-                           team_name: "Bayern").pluck(:id).first,
+  match_day: 14,
+  home_team: "Dortmund",
+  away_team: "Bayern",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 3
 )
 fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-05",
-  match_week: 15,
-  home_team_id: Team.where(league_id: 3,
-                           team_name: "Stuttgart").pluck(:id).first,
-  away_team_id: Team.where(league_id: 3,
-                           team_name: "Hertha Berlin").pluck(:id).first,
+  match_day: 14,
+  home_team: "Stuttgart",
+  away_team: "Hertha Berlin",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 3
 )
 fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-05",
-  match_week: 15,
-  home_team_id: Team.where(league_id: 3,
-                           team_name: "M'gladbach").pluck(:id).first,
-  away_team_id: Team.where(league_id: 3,
-                           team_name: "Freiburg").pluck(:id).first,
+  match_day: 14,
+  home_team: "M'gladbach",
+  away_team: "Freiburg",
   home_goals_result: nil,
-  away_goals_result: nil
+  away_goals_result: nil,
+  league_id: 3
 )
 fixture.save
 
 puts "Created Bundesliga fixtures..."
+
+# Community LeWagoneers Member guesses Match day 12
+
+Fixture.where(league_id: 1, match_day: 12).each do |fixture|
+  MemberGuess.create(
+    home_goals_guess: rand(0..4),
+    away_goals_guess: rand(0..4),
+    member_id: 1,
+    fixture_id: fixture.id
+  )
+  (3..8).each do |id|
+      MemberGuess.create(
+      home_goals_guess: rand(0..4),
+      away_goals_guess: rand(0..4),
+      member_id: id,
+      fixture_id: fixture.id
+    )
+  end
+end
+
+# Community LeWagoneers Member guesses Match day 13
+Fixture.where(league_id: 1, match_day: 13).each do |fixture|
+  MemberGuess.create(
+    home_goals_guess: rand(0..4),
+    away_goals_guess: rand(0..4),
+    member_id: 1,
+    fixture_id: fixture.id
+  )
+  (3..8).each do |id|
+      MemberGuess.create(
+      home_goals_guess: rand(0..4),
+      away_goals_guess: rand(0..4),
+      member_id: id,
+      fixture_id: fixture.id
+    )
+  end
+end
+
+# Community LeWagoneers Member guesses Match day 15
+Fixture.where(league_id: 1, match_day: 15).each do |fixture|
+  MemberGuess.create(
+    home_goals_guess: rand(0..4),
+    away_goals_guess: rand(0..4),
+    member_id: 1,
+    fixture_id: fixture.id
+  )
+  (3..8).each do |id|
+      MemberGuess.create(
+      home_goals_guess: rand(0..4),
+      away_goals_guess: rand(0..4),
+      member_id: id,
+      fixture_id: fixture.id
+    )
+  end
+end
+
+puts "Generated member guesses for LeWagoneers..."
+
+# Community TheBorcherts Member guesses Match day 12
+Fixture.where(league_id: 3, match_day: 12).each do |fixture|
+  MemberGuess.create(
+    home_goals_guess: rand(0..4),
+    away_goals_guess: rand(0..4),
+    member_id: 2,
+    fixture_id: fixture.id
+  )
+  (9..14).each do |id|
+      MemberGuess.create(
+      home_goals_guess: rand(0..4),
+      away_goals_guess: rand(0..4),
+      member_id: id,
+      fixture_id: fixture.id
+    )
+  end
+end
+# Community TheBorcherts Member guesses Match day 13
+Fixture.where(league_id: 3, match_day: 13).each do |fixture|
+  MemberGuess.create(
+    home_goals_guess: rand(0..4),
+    away_goals_guess: rand(0..4),
+    member_id: 2,
+    fixture_id: fixture.id
+  )
+  (9..14).each do |id|
+      MemberGuess.create(
+      home_goals_guess: rand(0..4),
+      away_goals_guess: rand(0..4),
+      member_id: id,
+      fixture_id: fixture.id
+    )
+  end
+end
+# Community TheBorcherts Member guesses Match day 14
+Fixture.where(league_id: 3, match_day: 14).each do |fixture|
+  MemberGuess.create(
+    home_goals_guess: rand(0..4),
+    away_goals_guess: rand(0..4),
+    member_id: 2,
+    fixture_id: fixture.id
+  )
+  (9..14).each do |id|
+      MemberGuess.create(
+      home_goals_guess: rand(0..4),
+      away_goals_guess: rand(0..4),
+      member_id: id,
+      fixture_id: fixture.id
+    )
+  end
+end
+
+puts "Generated member guesses for TheBorcherts..."
 puts
 puts "Complete!"
