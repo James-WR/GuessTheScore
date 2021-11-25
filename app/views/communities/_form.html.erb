@@ -1,0 +1,13 @@
+<h2>Guess The Scores!</h2>
+<% @member_guesses.each do |member_guess| %>
+  <%= simple_form_for([@community, member_guess]) do |f| %>
+  <%= f.label member_guess.fixture.home_team %>
+  <%= f.input :home_goals_guess %>
+  <%= f.label member_guess.fixture.away_team %>
+  <%= f.input :away_goals_guess %>
+  <%= f.input :fixture, as: :hidden, input_html: {value: member_guess.fixture.id} %>
+  <div class="submit-order-form">
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>
+<% end %>
