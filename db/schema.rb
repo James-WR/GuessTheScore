@@ -30,13 +30,13 @@ ActiveRecord::Schema.define(version: 2021_11_23_144939) do
     t.date "date"
     t.integer "home_goals_result"
     t.integer "away_goals_result"
-    t.integer "match_week"
+    t.integer "match_day"
+    t.string "home_team"
+    t.string "away_team"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "home_team_id"
-    t.bigint "away_team_id"
-    t.index ["away_team_id"], name: "index_fixtures_on_away_team_id"
-    t.index ["home_team_id"], name: "index_fixtures_on_home_team_id"
+    t.bigint "league_id"
+    t.index ["league_id"], name: "index_fixtures_on_league_id"
   end
 
   create_table "leagues", force: :cascade do |t|
@@ -68,14 +68,6 @@ ActiveRecord::Schema.define(version: 2021_11_23_144939) do
     t.index ["user_id"], name: "index_members_on_user_id"
   end
 
-  create_table "teams", force: :cascade do |t|
-    t.string "team_name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "league_id"
-    t.index ["league_id"], name: "index_teams_on_league_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -93,11 +85,9 @@ ActiveRecord::Schema.define(version: 2021_11_23_144939) do
 
   add_foreign_key "communities", "leagues"
   add_foreign_key "communities", "users", column: "owner_id"
-  add_foreign_key "fixtures", "teams", column: "away_team_id"
-  add_foreign_key "fixtures", "teams", column: "home_team_id"
+  add_foreign_key "fixtures", "leagues"
   add_foreign_key "member_guesses", "fixtures"
   add_foreign_key "member_guesses", "members"
   add_foreign_key "members", "communities"
   add_foreign_key "members", "users"
-  add_foreign_key "teams", "leagues"
 end
