@@ -36,8 +36,15 @@ class CommunitiesController < ApplicationController
 
   def create
     @community = Community.new(community_params)
-    @community.user_id = current_user.id
-    @community.save!
-    redirect_to community_path(@community)
+    @community.user = current_user
+    if @community.save
+      redirect_to community_path(@community)
+    end
+  end
+  
+  private
+  
+  def community_params
+    params.require(:community).permit(:community_name, :league_id)
   end
 end
