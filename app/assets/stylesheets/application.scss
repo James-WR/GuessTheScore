@@ -18,3 +18,24 @@
   font-size: 80px;
   padding: 24px;
 }
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: transparent;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+#my-communities {
+  color: rgb(230, 218, 218);
+  font-weight: bold;
+  font-size: large;
+}
+
+#log-out {
+  color: rgb(230, 218, 218);
+  font-weight: bold;
+  font-size: large;
+}
