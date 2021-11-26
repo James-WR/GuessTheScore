@@ -1,0 +1,10 @@
+<div class="container form-container" style="width:500px">
+  <h2>Create A Community</h2>
+  <%= simple_form_for(community) do |f| %>
+    <%= f.input :community_name %>
+    <%= f.input :league_id, collection: league_names %>
+     <div class="submit">
+      <%= f.submit "Submit", class: "btn btn-success" %>
+    </div>
+    <% end %>
+</div>
