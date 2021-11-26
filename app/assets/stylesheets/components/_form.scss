@@ -1,14 +1,17 @@
 .form-guess {
   width: 80px;
-  // display: inline-block;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
 }
 
 .form-guess-label {
-  // display: inline-block;
+  display: inline-block;
 }
 
-form {
+.guess-score {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
