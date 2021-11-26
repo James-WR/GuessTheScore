@@ -1,10 +1,15 @@
-<h1>SHOW</h1>
+<br>
+<h2><%= @community.community_name %></h2>
+<br>
+<div class="row">
+  <div class="column">
+    <%= render "form" %>
+  </div>
+  <div class="column">
+    <%= render "weekly_table" %>
+    <%= render "overall_table" %>
+  </div>
+</div>
 
-<ul>
-  <li><%= @community.community_name %></li>
-</ul>
-<%= render "form" %>
-<%= render "weekly_table" %>
-<%= render "overall_table" %>
 
 <%= link_to "<< Go back", communities_path %>
