@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' unless current_path = root_path%>
+    <%= render 'shared/navbar' unless params[:controller] == "pages" && params[:action] == "home" %>
     <%= render 'shared/flashes' %>
 
     <%= yield %>
