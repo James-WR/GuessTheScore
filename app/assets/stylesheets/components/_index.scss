@@ -3,3 +3,9 @@
 @import "avatar";
 @import "navbar";
 @import "form";
+
+#communities-index-title h2 {
+  color: rgb(193, 127, 5);
+  display: flex;
+  justify-content: center;
+}
