@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
+    <%= render 'shared/navbar' unless current_path = root_path%>
     <%= render 'shared/flashes' %>
 
     <%= yield %>
