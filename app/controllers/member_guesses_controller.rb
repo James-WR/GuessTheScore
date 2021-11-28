@@ -1,5 +1,4 @@
 class MemberGuessesController < ApplicationController
-
   def create
     @community = Community.find(params[:community_id])
     @member = Member.where(community: @community, user: current_user).first
