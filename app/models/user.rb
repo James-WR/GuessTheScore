@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :communities
   has_many :members
-  has_many :member_guesses, through: :members 
+  has_many :member_guesses, through: :members
 end
