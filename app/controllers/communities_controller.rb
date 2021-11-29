@@ -5,11 +5,11 @@ class CommunitiesController < ApplicationController
 
   def find_match_day_number(league_name)
     if league_name == "Premier League"
-      match_day_num = 15
+      return 15
     elsif league_name == "Women's Super League"
-      match_day_num = 9
+      return 9
     elsif league_name == "Bundesliga"
-      match_day_num = 14
+      return 14
     end
   end
 
@@ -17,7 +17,7 @@ class CommunitiesController < ApplicationController
     @community = Community.find(params[:id])
     @member_guesses = current_user.member_guesses.order(created_at: :asc).select { |m| m.fixture.match_day == find_match_day_number(@community.league.league_name) && m.fixture.league == @community.league}
     @sorted_members = @community.members.order(overall_points: :desc, overall_exact: :desc, overall_fuzzy: :desc)
-    Fixture.where(league_id: 3, match_day: 10).each do |fixture|
+    Fixture.where(league_id: @community.league.id, match_day: find_match_day_number(@community.league.league_name) - 1).each do |fixture|
       @community.members.each do |member|
         member.update(weekly_exact: 0, weekly_fuzzy: 0, weekly_points: 0)
         weekly_exact = 0
