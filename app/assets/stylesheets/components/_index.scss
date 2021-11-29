@@ -9,3 +9,26 @@
   display: flex;
   justify-content: center;
 }
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 16px;
+}
+.card-category {
+  height: 300px;
+  background-size: cover;
+  margin: 50px;
+}
+
+a {
+  color:rgb(193, 127, 5);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a:hover {
+  color: white;
+}
