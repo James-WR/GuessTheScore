@@ -4,7 +4,7 @@ class CommunitiesController < ApplicationController
   end
 
   def show
-    @member_guesses = current_user.member_guesses.order(created_at: :asc).select { |m| m.fixture.match_day == 13}
+    @member_guesses = current_user.member_guesses.order(created_at: :asc).select { |m| m.fixture.match_day == 13 }
     @community = Community.find(params[:id])
     @sorted_members = @community.members.order(overall_points: :desc, overall_exact: :desc, overall_fuzzy: :desc)
     Fixture.where(league_id: 1, match_day: 12).each do |fixture|
@@ -19,7 +19,7 @@ class CommunitiesController < ApplicationController
         elsif guess.home_goals_guess > guess.away_goals_guess && fixture.home_goals_result > fixture.away_goals_result
           weekly_fuzzy += 1
         elsif guess.away_goals_guess > guess.home_goals_guess && fixture.away_goals_result > fixture.home_goals_result
-          weekly_fuzzy +=1
+          weekly_fuzzy += 1
         end
         weekly_points = (weekly_exact * 3) + weekly_fuzzy
         member.update(weekly_exact: weekly_exact, weekly_fuzzy: weekly_fuzzy, weekly_points: weekly_points)
@@ -30,9 +30,7 @@ class CommunitiesController < ApplicationController
 
   def new
     @community = Community.new
-    @league_names = League.all.map do |league|
-      league.league_name
-    end
+    @league_names = League.all.map(&:league_name)
   end
 
   def create
