@@ -3,7 +3,7 @@
 </div>
 
 <div class="cards">
-  <% @communities.each do |community| %>
+  <% @communities.where(owner: current_user).each do |community| %>
     <div class="card-category" style="background-image: url('/assets/carousel_background_1.jpg')">
       <%= link_to community.community_name, community_path(community) %>
     </div>
