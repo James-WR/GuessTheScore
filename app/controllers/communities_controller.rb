@@ -7,7 +7,7 @@ class CommunitiesController < ApplicationController
     @member_guesses = current_user.member_guesses.order(created_at: :asc).select { |m| m.fixture.match_day == 13 }
     @community = Community.find(params[:id])
     @sorted_members = @community.members.order(overall_points: :desc, overall_exact: :desc, overall_fuzzy: :desc)
-    Fixture.where(league_id: 1, match_day: 14).each do |fixture|
+    Fixture.where(league_id: 1, match_day: 15).each do |fixture|
       @community.members.each do |member|
         member.update(weekly_exact: 0, weekly_fuzzy: 0, weekly_points: 0)
         weekly_exact = 0
