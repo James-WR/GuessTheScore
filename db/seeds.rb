@@ -239,8 +239,8 @@ fixture = Fixture.new(
   match_day: 13,
   home_team: "Arsenal",
   away_team: "Newcastle",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 2,
+  away_goals_result: 0,
   league_id: 1
 )
 fixture.save
@@ -250,8 +250,8 @@ fixture = Fixture.new(
   match_day: 13,
   home_team: "Crystal Palace",
   away_team: "Aston Villa",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 1,
+  away_goals_result: 2,
   league_id: 1
 )
 fixture.save
@@ -261,8 +261,8 @@ fixture = Fixture.new(
   match_day: 13,
   home_team: "Liverpool",
   away_team: "Southampton",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 4,
+  away_goals_result: 0,
   league_id: 1
 )
 fixture.save
@@ -272,8 +272,8 @@ fixture = Fixture.new(
   match_day: 13,
   home_team: "Norwich",
   away_team: "Wolves",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 0,
+  away_goals_result: 0,
   league_id: 1
 )
 fixture.save
@@ -283,8 +283,8 @@ fixture = Fixture.new(
   match_day: 13,
   home_team: "Brighton",
   away_team: "Leeds",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 0,
+  away_goals_result: 0,
   league_id: 1
 )
 fixture.save
@@ -294,30 +294,31 @@ fixture = Fixture.new(
   match_day: 13,
   home_team: "Brentford",
   away_team: "Everton",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 1,
+  away_goals_result: 0,
   league_id: 1
 )
 fixture.save
 
-fixture = Fixture.new(
-  date: "2021-11-28",
-  match_day: 13,
-  home_team: "Burnley",
-  away_team: "Tottenham",
-  home_goals_result: nil,
-  away_goals_result: nil,
-  league_id: 1
-)
-fixture.save
+# Postponed!
+# fixture = Fixture.new(
+#   date: "2021-11-28",
+#   match_day: 13,
+#   home_team: "Burnley",
+#   away_team: "Tottenham",
+#   home_goals_result: nil,
+#   away_goals_result: nil,
+#   league_id: 1
+# )
+# fixture.save
 
 fixture = Fixture.new(
   date: "2021-11-28",
   match_day: 13,
   home_team: "Leicester",
   away_team: "Watford",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 4,
+  away_goals_result: 2,
   league_id: 1
 )
 fixture.save
@@ -327,8 +328,8 @@ fixture = Fixture.new(
   match_day: 13,
   home_team: "Man City",
   away_team: "West Ham",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 2,
+  away_goals_result: 1,
   league_id: 1
 )
 fixture.save
@@ -338,8 +339,8 @@ fixture = Fixture.new(
   match_day: 13,
   home_team: "Chelsea",
   away_team: "Man United",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 1,
+  away_goals_result: 1,
   league_id: 1
 )
 fixture.save
@@ -694,8 +695,8 @@ fixture = Fixture.new(
   match_day: 13,
   home_team: "Stuttgart",
   away_team: "Mainz",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 2,
+  away_goals_result: 1,
   league_id: 3
 )
 fixture.save
@@ -705,8 +706,8 @@ fixture = Fixture.new(
   match_day: 13,
   home_team: "Wolfsburg",
   away_team: "Dortmund",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 1,
+  away_goals_result: 3,
   league_id: 3
 )
 fixture.save
@@ -716,8 +717,8 @@ fixture = Fixture.new(
   match_day: 13,
   home_team: "Hertha Berlin",
   away_team: "Augsburg",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 1,
+  away_goals_result: 1,
   league_id: 3
 )
 fixture.save
@@ -727,8 +728,8 @@ fixture = Fixture.new(
   match_day: 13,
   home_team: "Köln",
   away_team: "M'gladbach",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 4,
+  away_goals_result: 1,
   league_id: 3
 )
 fixture.save
@@ -738,8 +739,8 @@ fixture = Fixture.new(
   match_day: 13,
   home_team: "Bochum",
   away_team: "Freiburg",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 2,
+  away_goals_result: 1,
   league_id: 3
 )
 fixture.save
@@ -749,8 +750,8 @@ fixture = Fixture.new(
   match_day: 13,
   home_team: "Fürth",
   away_team: "Hoffenheim",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 3,
+  away_goals_result: 6,
   league_id: 3
 )
 fixture.save
@@ -760,8 +761,8 @@ fixture = Fixture.new(
   match_day: 13,
   home_team: "Bayern",
   away_team: "Bielefeld",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 1,
+  away_goals_result: 0,
   league_id: 3
 )
 fixture.save
@@ -771,8 +772,8 @@ fixture = Fixture.new(
   match_day: 13,
   home_team: "Frankfurt",
   away_team: "Union Berlin",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 2,
+  away_goals_result: 1,
   league_id: 3
 )
 fixture.save
@@ -782,8 +783,8 @@ fixture = Fixture.new(
   match_day: 13,
   home_team: "Leipzig",
   away_team: "Leverkusen",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 1,
+  away_goals_result: 3,
   league_id: 3
 )
 fixture.save
