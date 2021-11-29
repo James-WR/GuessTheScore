@@ -6,6 +6,7 @@
   <% @communities.each do |community| %>
     <div class="card-category" style="background-image: url('/assets/carousel_background_1.jpg')">
       <%= link_to community.community_name, community_path(community) %>
+      <p><%= community.join_code %></p>
     </div>
   <% end %>
 </div>
