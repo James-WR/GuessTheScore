@@ -3,11 +3,21 @@ class CommunitiesController < ApplicationController
     @communities = Community.all
   end
 
+  def find_match_day_number(league_name)
+    if league_name == "Premier League"
+      return 15
+    elsif league_name == "Women's Super League"
+      return 9
+    elsif league_name == "Bundesliga"
+      return 14
+    end
+  end
+
   def show
-    @member_guesses = current_user.member_guesses.order(created_at: :asc).select { |m| m.fixture.match_day == 13 }
     @community = Community.find(params[:id])
+    @member_guesses = current_user.member_guesses.order(created_at: :asc).select { |m| m.fixture.match_day == find_match_day_number(@community.league.league_name) && m.fixture.league == @community.league}
     @sorted_members = @community.members.order(overall_points: :desc, overall_exact: :desc, overall_fuzzy: :desc)
-    Fixture.where(league_id: 1, match_day: 15).each do |fixture|
+    Fixture.where(league_id: @community.league.id, match_day: find_match_day_number(@community.league.league_name) - 1).each do |fixture|
       @community.members.each do |member|
         member.update(weekly_exact: 0, weekly_fuzzy: 0, weekly_points: 0)
         weekly_exact = 0
