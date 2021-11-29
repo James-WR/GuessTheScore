@@ -19,7 +19,7 @@ class MemberGuessesController < ApplicationController
     @member_guess = MemberGuess.find(params[:id])
     @member_guess.update(member_guess_params)
 
-    redirect_to community_path(@community)
+    # redirect_to community_path(@community)
   end
 
   private
