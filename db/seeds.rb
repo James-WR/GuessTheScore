@@ -345,6 +345,101 @@ fixture = Fixture.new(
 )
 fixture.save
 
+# EPL match_day 14
+
+fixture = Fixture.new(
+  date: "2021-11-30",
+  match_day: 14,
+  home_team: "Newcastle",
+  away_team: "Norwich",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-11-30",
+  match_day: 14,
+  home_team: "Leeds",
+  away_team: "Crystal Palace",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.savefixture = Fixture.new(
+  date: "2021-12-01",
+  match_day: 14,
+  home_team: "Southampton",
+  away_team: "Leicester",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.savefixture = Fixture.new(
+  date: "2021-12-01",
+  match_day: 14,
+  home_team: "Wolves",
+  away_team: "Burnley",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.savefixture = Fixture.new(
+  date: "2021-12-01",
+  match_day: 14,
+  home_team: "Watford",
+  away_team: "Chelsea",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.savefixture = Fixture.new(
+  date: "2021-12-01",
+  match_day: 14,
+  home_team: "West Ham",
+  away_team: "Brighton",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.savefixture = Fixture.new(
+  date: "2021-12-01",
+  match_day: 14,
+  home_team: "Everton",
+  away_team: "Liverpool",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.savefixture = Fixture.new(
+  date: "2021-12-01",
+  match_day: 14,
+  home_team: "Aston Villa",
+  away_team: "Man City",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.savefixture = Fixture.new(
+  date: "2021-12-02",
+  match_day: 14,
+  home_team: "Tottenham",
+  away_team: "Brentford",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.savefixture = Fixture.new(
+  date: "2021-12-02",
+  match_day: 14,
+  home_team: "Man United",
+  away_team: "Arsenal",
+  home_goals_result: nil,
+  away_goals_result: nil,
+  league_id: 1
+)
+fixture.save
 
 # EPL match_day 15
 
