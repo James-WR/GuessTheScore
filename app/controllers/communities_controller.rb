@@ -46,6 +46,8 @@ class CommunitiesController < ApplicationController
   def create
     @community = Community.new(community_params)
     @community.owner = current_user
+    data = "#{owner.email}#{community_name}#{Time.now}"
+    @join_code = Digest::SHA256.hexdigest data
 
     if @community.save
       redirect_to community_path(@community)
