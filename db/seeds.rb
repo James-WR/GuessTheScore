@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 user = User.create(
   first_name: "Jonathan",
   last_name: "Smith",
@@ -47,81 +40,6 @@ league.save
 
 puts "Created three leagues..."
 
-community = Community.new(
-  community_name: "LeWagoneers",
-  join_code: "dbd259353aeb5c8ccdb39e4aedb5ef88ab4e0a78d3e6b5fb08146f0f02bbb051",
-  owner_id: 1,
-  league_id: 1
-)
-community.save
-
-community = Community.new(
-  community_name: "TheBorcherts",
-  join_code: "896f96d1e19011dbe619175639e6c141391febdd9e993c082d6e19d2639bef3a",
-  owner_id: 2,
-  league_id: 3
-)
-community.save
-
-puts "Created two communities"
-
-exact = rand(0..12)
-fuzzy = rand(0..(12 - exact))
-
-member = Member.new(
-  user_id: 1,
-  community_id: 1,
-  overall_exact: exact,
-  overall_fuzzy: fuzzy,
-  overall_points: (exact * 3) + fuzzy
-)
-member.save
-
-exact = rand(0..12)
-fuzzy = rand(0..(12 - exact))
-
-member = Member.new(
-  user_id: 2,
-  community_id: 2,
-  overall_exact: exact,
-  overall_fuzzy: fuzzy,
-  overall_points: (exact * 3) + fuzzy
-)
-member.save
-
-puts "Added owners as members"
-
-(3..8).each do |id|
-  exact = rand(0..12)
-  fuzzy = rand(0..(12-exact))
-  member = Member.new(
-    user_id: id,
-    community_id: 1,
-    overall_exact: exact,
-    overall_fuzzy: fuzzy,
-    overall_points: (exact * 3) + fuzzy
-  )
-  member.save
-end
-
-puts "Populated first community"
-
-(9..14).each do |id|
-  exact = rand(0..6)
-  fuzzy = fuzzy = rand(0..(12-exact))
-  member = Member.new(
-    user_id: id,
-    community_id: 2,
-    overall_exact: exact,
-    overall_fuzzy: fuzzy,
-    overall_points: (exact * 3) + fuzzy
-  )
-  member.save
-end
-
-puts "Populated second community"
-
-# EPL match_day 12
 fixture = Fixture.new(
   date: "2021-11-20",
   match_day: 12,
@@ -987,140 +905,73 @@ fixture.save
 
 puts "Created Bundesliga fixtures..."
 
-# Community LeWagoneers Member guesses Match day 12
+community = Community.new(
+  community_name: "Test",
+  join_code: "dbd259353aeb5c8ccdb39e4aedb5ef88ab4e0a78d3e6b5fb08146f0f02bbb051",
+  owner_id: 1,
+  league_id: 1
+)
+community.save
 
-Fixture.where(league_id: 1, match_day: 12).each do |fixture|
-  # MemberGuess.create(
-  #   home_goals_guess: rand(0..4),
-  #   away_goals_guess: rand(0..2),
-  #   member_id: 1,
-  #   fixture_id: fixture.id
-  # )
-  lewagoneers_members = Member.where(community_id: 1)
-  lewagoneers_members.each do |member|
-      MemberGuess.create(
-      home_goals_guess: rand(0..4),
-      away_goals_guess: rand(0..2),
-      member: member,
-      fixture_id: fixture.id
-    )
-  end
+community = Community.new(
+  community_name: "TheBorcherts",
+  join_code: "896f96d1e19011dbe619175639e6c141391febdd9e993c082d6e19d2639bef3a",
+  owner_id: 2,
+  league_id: 3
+)
+community.save
+
+puts "Created two communities"
+
+exact = rand(0..12)
+fuzzy = rand(0..(12 - exact))
+
+member = Member.where(user_id: 1).first
+member.update(overall_exact: exact, overall_fuzzy: fuzzy, overall_points: (exact * 3) + fuzzy )
+
+exact = rand(0..12)
+fuzzy = rand(0..(12 - exact))
+
+member = Member.where(user_id: 2).first
+member.update(overall_exact: exact, overall_fuzzy: fuzzy, overall_points: (exact * 3) + fuzzy )
+
+puts "Added random points data for owners"
+
+(3..8).each do |id|
+  exact = rand(0..12)
+  fuzzy = rand(0..(12-exact))
+  member = Member.new(
+    user_id: id,
+    community_id: 1,
+    overall_exact: exact,
+    overall_fuzzy: fuzzy,
+    overall_points: (exact * 3) + fuzzy
+  )
+  member.save
 end
 
-# Community LeWagoneers Member guesses Match day 13
-Fixture.where(league_id: 1, match_day: 13).each do |fixture|
-  # MemberGuess.create(
-  #   home_goals_guess: rand(0..4),
-  #   away_goals_guess: rand(0..2),
-  #   member_id: 1,
-  #   fixture_id: fixture.id
-  # )
-  lewagoneers_members = Member.where(community_id: 1)
-  lewagoneers_members.each do |member|
-      MemberGuess.create(
-      home_goals_guess: rand(0..4),
-      away_goals_guess: rand(0..2),
-      member: member,
-      fixture_id: fixture.id
-    )
-  end
+puts "Populated first community"
+
+(9..14).each do |id|
+  exact = rand(0..6)
+  fuzzy = fuzzy = rand(0..(12-exact))
+  member = Member.new(
+    user_id: id,
+    community_id: 2,
+    overall_exact: exact,
+    overall_fuzzy: fuzzy,
+    overall_points: (exact * 3) + fuzzy
+  )
+  member.save
 end
 
-# Community LeWagoneers Member guesses Match day 14
-Fixture.where(league_id: 1, match_day: 14).each do |fixture|
-  # MemberGuess.create(
-  #   home_goals_guess: rand(0..4),
-  #   away_goals_guess: rand(0..2),
-  #   member_id: 1,
-  #   fixture_id: fixture.id
-  # )
-  lewagoneers_members = Member.where(community_id: 1)
-  lewagoneers_members.each do |member|
-      MemberGuess.create(
-      home_goals_guess: rand(0..4),
-      away_goals_guess: rand(0..2),
-      member: member,
-      fixture_id: fixture.id
-    )
-  end
-end
+puts "Populated second community"
 
-# Community LeWagoneers Member guesses Match day 15
-Fixture.where(league_id: 1, match_day: 15).each do |fixture|
-  # MemberGuess.create(
-  #   home_goals_guess: rand(0..4),
-  #   away_goals_guess: rand(0..2),
-  #   member_id: 1,
-  #   fixture_id: fixture.id
-  # )
-  lewagoneers_members = Member.where(community_id: 1)
-  lewagoneers_members.each do |member|
-      MemberGuess.create(
-      home_goals_guess: rand(0..4),
-      away_goals_guess: rand(0..2),
-      member: member,
-      fixture_id: fixture.id
-    )
-  end
-end
 
-puts "Generated member guesses for LeWagoneers..."
+    MemberGuess.all.each do |guess|
+      guess.update(home_goals_guess: rand(0..4), away_goals_guess: rand(0..2))
+    end
 
-# Community TheBorcherts Member guesses Match day 12
-Fixture.where(league_id: 3, match_day: 12).each do |fixture|
-  # MemberGuess.create(
-  #   home_goals_guess: rand(0..4),
-  #   away_goals_guess: rand(0..2),
-  #   member_id: 2,
-  #   fixture_id: fixture.id
-  # )
-  borchert_members = Member.where(community_id: 2)
-  borchert_members.each do |member|
-      MemberGuess.create(
-      home_goals_guess: rand(0..4),
-      away_goals_guess: rand(0..2),
-      member: member,
-      fixture_id: fixture.id
-    )
-  end
-end
-# Community TheBorcherts Member guesses Match day 13
-Fixture.where(league_id: 3, match_day: 13).each do |fixture|
-  # MemberGuess.create(
-  #   home_goals_guess: rand(0..4),
-  #   away_goals_guess: rand(0..2),
-  #   member_id: 2,
-  #   fixture_id: fixture.id
-  # )
-  borchert_members = Member.where(community_id: 2)
-  borchert_members.each do |member|
-      MemberGuess.create(
-      home_goals_guess: rand(0..4),
-      away_goals_guess: rand(0..2),
-      member: member,
-      fixture_id: fixture.id
-    )
-  end
-end
-# Community TheBorcherts Member guesses Match day 14
-Fixture.where(league_id: 3, match_day: 14).each do |fixture|
-  # MemberGuess.create(
-  #   home_goals_guess: rand(0..4),
-  #   away_goals_guess: rand(0..2),
-  #   member_id: 2,
-  #   fixture_id: fixture.id
-  # )
-  borchert_members = Member.where(community_id: 2)
-  borchert_members.each do |member|
-      MemberGuess.create(
-      home_goals_guess: rand(0..4),
-      away_goals_guess: rand(0..2),
-      member: member,
-      fixture_id: fixture.id
-    )
-  end
-end
-
-puts "Generated member guesses for TheBorcherts..."
+puts "Generated random scores for all member guesses..."
 puts
 puts "Complete!"
