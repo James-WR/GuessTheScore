@@ -1,6 +1,7 @@
 <div class="show-page">
   <br>
     <h2 id="show-h2"><%= @community.community_name %></h2>
+    <%= link_to "show results", fast_forward_community_path(@community), method: :post, class: "btn btn-primary" %>
   <br>
 </div>
 <div class="row">

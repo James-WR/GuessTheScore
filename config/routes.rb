@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     collection do
       post :join
     end
+    member do
+      post :fast_forward
+    end
     resources :members, only: [:new, :create, :update]
     resources :member_guesses, only: [:new, :create, :update]
   end
