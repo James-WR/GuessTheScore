@@ -1,0 +1,17 @@
+#communities-index-title h2 {
+  color: $dark-orange;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 16px;
+}
+.card-category {
+  height: 300px;
+  background-size: cover;
+  margin: 50px;
+}
