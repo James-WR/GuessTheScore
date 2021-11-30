@@ -1,30 +1,31 @@
-<div class="container form-container" style="width:500px">
+<div class="container form-container" data-controller="submit-scores" style="width:500px" >
   <h3>Guess The Scores!</h3>
     <% @member_guesses.each do |member_guess| %>
       <div class="guess-score">
         <% if params[:action] == "show" && params[:controller] == "communities" %>
-          <%= simple_form_for([@community, member_guess], html: {class: "guess-score"}) do |f| %>
+          <%= simple_form_for([@community, member_guess], html: {class: "guess-score", data:{submit_scores_target: "form"}}) do |f| %>
             <%= f.label member_guess.fixture.home_team, label_html: {class: "form-guess-label"} %>
             <%= f.input :home_goals_guess, label: false, input_html: {class: "form-guess"} %>
             <%= f.input :away_goals_guess, label: false, input_html: {class: "form-guess"} %>
             <%= f.label member_guess.fixture.away_team, label_html: {class: "form-guess-label"} %>
           <%= f.input :fixture, as: :hidden, input_html: {value: member_guess.fixture.id} %>
-          <div class="submit-order-form">
-            <%= f.submit "Submit", class: "btn btn-primary" %>
+          <div class="submit-order-form" style="">
+            <%= f.submit "Submit", class: "btn btn-primary", style:"display:none" %>
           </div>
           <% end %>
         <% else %>
-          <%= simple_form_for([@community, member_guess]) do |f| %>
+          <%= simple_form_for([@community, member_guess], html: {data:{submit_scores_target: "form"}}) do |f| %>
             <%= f.label member_guess.fixture.home_team %>
             <%= f.input :home_goals_guess, label: false %>
             <%= f.input :away_goals_guess, label: false %>
             <%= f.label member_guess.fixture.away_team %>
           <%= f.input :fixture, as: :hidden, input_html: {value: member_guess.fixture.id} %>
           <div class="submit-order-form">
-            <%= f.submit "Submit", class: "btn btn-primary" %>
+            <%= f.submit "Submit", class: "btn btn-primary", style:"display:none", data:{submit_scores_target: "button"} %>
           </div>
           <% end %>
         <% end %>
       </div>
     <% end %>
+  <button class="btn btn-primary btn-lg" data-action="click->submit-scores#submit">Submit all scores</button>
 </div>
