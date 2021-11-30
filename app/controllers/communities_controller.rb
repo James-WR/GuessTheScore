@@ -1,12 +1,12 @@
 class CommunitiesController < ApplicationController
   def index
-    memberships = current_user.members
-    @communities = []
-    memberships.each do |membership|
-      Community.all.each do |community|
-        @communities << community if community.members.include?(membership)
-      end
-    end
+    # memberships = current_user.members
+    @communities = current_user.members.map(&:community)
+    # memberships.each do |membership|
+    #   Community.all.each do |community|
+    #     @communities << community if community.members.include?(membership)
+    #   end
+    # end
   end
 
   def member?(community)
