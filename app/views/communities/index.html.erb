@@ -1,7 +1,7 @@
+
 <div id="communities-index-title">
   <h2>Communities Index</h2>
 </div>
-
 <div class="cards">
   <% @communities.each do |community| %>
     <div class="card-category" style="background-image: url('/assets/carousel_background_1.jpg')">
@@ -11,6 +11,5 @@
   <% end %>
 </div>
 
-<li>
-  <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-</li>
+
+<%= link_to "Back to Home", root_path %>
