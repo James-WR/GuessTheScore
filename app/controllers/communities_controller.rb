@@ -70,6 +70,13 @@ class CommunitiesController < ApplicationController
     end
   end
 
+  def join
+    @community = Community.where(join_code: params[:query]).first
+    if @community
+      Member.create(user: current_user, community: @community, overall_exact: 0, overall_fuzzy: 0, overall_points: 0)
+    end
+  end
+
   private
 
   def community_params
