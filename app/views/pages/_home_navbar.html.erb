@@ -8,14 +8,14 @@
     <ul class="navbar-nav mr-auto">
       <% if !user_signed_in? %>
       <li class="nav-item">
-        <a class="nav-link" href="users/sign_up" id="log-in-button">Log In / Sign Up</a>
+        <a class="nav-link" href="users/sign_in" id="log-in-button">Log In / Sign Up</a>
       </li>
       <%else%>
       <li class="nav-item">
         <a class="nav-link" href="/communities" id="my-communities">My Communities</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/users/sign_out" id="my-communities">Log out</a>
+        <a class="nav-link" href="users/sign_out" data-method="delete" rel="nofollow" id="log-out">Log out</a>
       </li>
       <%end%>
     </ul>
