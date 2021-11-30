@@ -38,10 +38,11 @@ class CommunitiesController < ApplicationController
 
   def generate_member_points(fixtures)
     @community.members.update_all(weekly_exact: 0, weekly_fuzzy: 0, weekly_points: 0)
-    fixtures.each do |fixture|
-      @community.members.each do |member|
-        weekly_exact = 0
-        weekly_fuzzy = 0
+    @community.members.each do |member|
+      weekly_exact = 0
+      weekly_fuzzy = 0
+      # weekly_points = 0
+      fixtures.each do |fixture|
         guess = member.member_guesses.where(fixture_id: fixture.id).first
         if guess.home_goals_guess == fixture.home_goals_result && guess.away_goals_guess == fixture.away_goals_result
           weekly_exact += 1
@@ -50,10 +51,10 @@ class CommunitiesController < ApplicationController
         elsif guess.away_goals_guess > guess.home_goals_guess && fixture.away_goals_result > fixture.home_goals_result
           weekly_fuzzy += 1
         end
-        weekly_points = (weekly_exact * 3) + weekly_fuzzy
-        member.update(weekly_exact: weekly_exact, weekly_fuzzy: weekly_fuzzy, weekly_points: weekly_points)
-        member.update(overall_exact: member.overall_exact += weekly_exact, overall_fuzzy: member.overall_fuzzy += weekly_fuzzy, overall_points: member.overall_points += weekly_points)
       end
+      weekly_points = (weekly_exact * 3) + weekly_fuzzy
+      member.update(weekly_exact: weekly_exact, weekly_fuzzy: weekly_fuzzy, weekly_points: weekly_points)
+      member.update(overall_exact: member.overall_exact += weekly_exact, overall_fuzzy: member.overall_fuzzy += weekly_fuzzy, overall_points: member.overall_points += weekly_points)
     end
   end
 

@@ -8,12 +8,12 @@ export default class extends Controller {
     console.log(this.formTargets.slice(0,2))
   }
   submit() {
-    let count = 10
+    let count = 50
     this.formTargets.forEach((form) => {
       setTimeout(function() {
         form.submit()
       }, count)
-      count += 10
+      count += 50
     });
   }
 }
