@@ -5,19 +5,23 @@
 <div class="cards">
   <% @communities.each do |community| %>
     <div class="card-category" style="background-image: url('/assets/carousel_background_1.jpg')">
-      <%= link_to community.community_name, community_path(community) %>
-      <% if community.owner == current_user %>
+      <div class="link-text">
+        <%= link_to community.community_name, community_path(community) %>
+          <% if community.owner == current_user %>
+      </div>
         <div data-controller="clipboard" data-clipboard-feedback-text-value="Copied!" data-clipboard-code-value=<%= community.join_code %>>
           <div id="index-card-input">
             <input data-clipboard-target="input" type="text" value=@communities.join_code readonly>
           </div>
-          <button class="btn btn-primary" id="index-card-button" data-action="click->clipboard#copy">Copy join code</button>
+            <div class="d-flex flex-row justify-content-center mt-auto">
+              <button class="align-self-end btn btn-primary" id="index-card-button" data-action="click->clipboard#copy">Copy Join Code</button>
+            </div>
         </div>
       <%end%>
     </div>
   <% end %>
 </div>
 
-<li>
+<%# <li>
   <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-</li>
+<%# </li> %>
