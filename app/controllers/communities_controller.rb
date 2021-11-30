@@ -17,7 +17,8 @@ class CommunitiesController < ApplicationController
     @community = Community.find(params[:id])
     @member_guesses = current_user.member_guesses.order(created_at: :asc).select { |m| m.fixture.match_day == find_match_day_number(@community.league.league_name) && m.fixture.league == @community.league}
     @sorted_members = @community.members.order(overall_points: :desc, overall_exact: :desc, overall_fuzzy: :desc)
-    Fixture.where(league_id: @community.league.id, match_day: find_match_day_number(@community.league.league_name) - 1).each do |fixture|
+    fixtures = Fixture.with_home_results.with_away_results.where(league_id: @community.league.id, match_day: find_match_day_number(@community.league.league_name) - 1)
+    fixtures.each do |fixture|
       @community.members.each do |member|
         member.update(weekly_exact: 0, weekly_fuzzy: 0, weekly_points: 0)
         weekly_exact = 0
@@ -46,6 +47,8 @@ class CommunitiesController < ApplicationController
   def create
     @community = Community.new(community_params)
     @community.owner = current_user
+    data = "#{@community.owner.email}#{@community.community_name}#{Time.now}"
+    @community.join_code = Digest::SHA256.hexdigest data
 
     if @community.save
       redirect_to community_path(@community)
