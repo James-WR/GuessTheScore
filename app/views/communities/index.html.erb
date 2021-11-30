@@ -6,7 +6,14 @@
   <% @communities.each do |community| %>
     <div class="card-category" style="background-image: url('/assets/carousel_background_1.jpg')">
       <%= link_to community.community_name, community_path(community) %>
-      <p><%= community.join_code if community.owner == current_user %></p>
+      <% if community.owner == current_user %>
+        <div data-controller="clipboard" data-clipboard-feedback-text-value="Copied!" data-clipboard-code-value=<%= community.join_code %>>
+          <div id="index-card-input">
+            <input data-clipboard-target="input" type="text" value=@communities.join_code readonly>
+          </div>
+          <button class="btn btn-primary" id="index-card-button" data-action="click->clipboard#copy">Copy join code</button>
+        </div>
+      <%end%>
     </div>
   <% end %>
 </div>
