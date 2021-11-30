@@ -37,7 +37,6 @@ class CommunitiesController < ApplicationController
         member.update(weekly_exact: 0, weekly_fuzzy: 0, weekly_points: 0)
         weekly_exact = 0
         weekly_fuzzy = 0
-        weekly_points = 0
         guess = member.member_guesses.where(fixture_id: fixture.id).first
         if guess.home_goals_guess == fixture.home_goals_result && guess.away_goals_guess == fixture.away_goals_result
           weekly_exact += 1
