@@ -14,11 +14,12 @@ class CommunitiesController < ApplicationController
   end
 
   def find_match_day_number(league_name)
-    if league_name == "Premier League"
+    case league_name
+    when "Premier League"
       return 15
-    elsif league_name == "Women's Super League"
+    when "Women's Super League"
       return 9
-    elsif league_name == "Bundesliga"
+    when "Bundesliga"
       return 14
     end
   end
