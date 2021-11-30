@@ -8,7 +8,7 @@ class Member < ApplicationRecord
   after_create :create_member_guesses
 
   def create_member_guesses
-    Fixture.where(league: self.community.league).each do |fixture|
+    Fixture.where(league: community.league).each do |fixture|
       MemberGuess.create(
         home_goals_guess: 0,
         away_goals_guess: 0,
