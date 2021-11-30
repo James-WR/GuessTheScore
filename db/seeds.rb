@@ -352,8 +352,8 @@ fixture = Fixture.new(
   match_day: 14,
   home_team: "Newcastle",
   away_team: "Norwich",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 0,
+  away_goals_result: 0,
   league_id: 1
 )
 fixture.save
@@ -363,80 +363,80 @@ fixture = Fixture.new(
   match_day: 14,
   home_team: "Leeds",
   away_team: "Crystal Palace",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 0,
+  away_goals_result: 0,
   league_id: 1
 )
-fixture.savefixture = Fixture.new(
+fixture = Fixture.new(
   date: "2021-12-01",
   match_day: 14,
   home_team: "Southampton",
   away_team: "Leicester",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 0,
+  away_goals_result: 0,
   league_id: 1
 )
-fixture.savefixture = Fixture.new(
+fixture = Fixture.new(
   date: "2021-12-01",
   match_day: 14,
   home_team: "Wolves",
   away_team: "Burnley",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 0,
+  away_goals_result: 0,
   league_id: 1
 )
-fixture.savefixture = Fixture.new(
+fixture = Fixture.new(
   date: "2021-12-01",
   match_day: 14,
   home_team: "Watford",
   away_team: "Chelsea",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 0,
+  away_goals_result: 0,
   league_id: 1
 )
-fixture.savefixture = Fixture.new(
+fixture = Fixture.new(
   date: "2021-12-01",
   match_day: 14,
   home_team: "West Ham",
   away_team: "Brighton",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 0,
+  away_goals_result: 0,
   league_id: 1
 )
-fixture.savefixture = Fixture.new(
+fixture = Fixture.new(
   date: "2021-12-01",
   match_day: 14,
   home_team: "Everton",
   away_team: "Liverpool",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 0,
+  away_goals_result: 0,
   league_id: 1
 )
-fixture.savefixture = Fixture.new(
+fixture = Fixture.new(
   date: "2021-12-01",
   match_day: 14,
   home_team: "Aston Villa",
   away_team: "Man City",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 0,
+  away_goals_result: 0,
   league_id: 1
 )
-fixture.savefixture = Fixture.new(
+fixture = Fixture.new(
   date: "2021-12-02",
   match_day: 14,
   home_team: "Tottenham",
   away_team: "Brentford",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 0,
+  away_goals_result: 0,
   league_id: 1
 )
-fixture.savefixture = Fixture.new(
+fixture = Fixture.new(
   date: "2021-12-02",
   match_day: 14,
   home_team: "Man United",
   away_team: "Arsenal",
-  home_goals_result: nil,
-  away_goals_result: nil,
+  home_goals_result: 0,
+  away_goals_result: 0,
   league_id: 1
 )
 fixture.save
@@ -990,17 +990,18 @@ puts "Created Bundesliga fixtures..."
 # Community LeWagoneers Member guesses Match day 12
 
 Fixture.where(league_id: 1, match_day: 12).each do |fixture|
-  MemberGuess.create(
-    home_goals_guess: rand(0..4),
-    away_goals_guess: rand(0..2),
-    member_id: 1,
-    fixture_id: fixture.id
-  )
-  (3..8).each do |id|
+  # MemberGuess.create(
+  #   home_goals_guess: rand(0..4),
+  #   away_goals_guess: rand(0..2),
+  #   member_id: 1,
+  #   fixture_id: fixture.id
+  # )
+  lewagoneers_members = Member.where(community_id: 1)
+  lewagoneers_members.each do |member|
       MemberGuess.create(
       home_goals_guess: rand(0..4),
       away_goals_guess: rand(0..2),
-      member_id: id,
+      member: member,
       fixture_id: fixture.id
     )
   end
@@ -1008,17 +1009,18 @@ end
 
 # Community LeWagoneers Member guesses Match day 13
 Fixture.where(league_id: 1, match_day: 13).each do |fixture|
-  MemberGuess.create(
-    home_goals_guess: rand(0..4),
-    away_goals_guess: rand(0..2),
-    member_id: 1,
-    fixture_id: fixture.id
-  )
-  (3..8).each do |id|
+  # MemberGuess.create(
+  #   home_goals_guess: rand(0..4),
+  #   away_goals_guess: rand(0..2),
+  #   member_id: 1,
+  #   fixture_id: fixture.id
+  # )
+  lewagoneers_members = Member.where(community_id: 1)
+  lewagoneers_members.each do |member|
       MemberGuess.create(
       home_goals_guess: rand(0..4),
       away_goals_guess: rand(0..2),
-      member_id: id,
+      member: member,
       fixture_id: fixture.id
     )
   end
@@ -1026,17 +1028,18 @@ end
 
 # Community LeWagoneers Member guesses Match day 14
 Fixture.where(league_id: 1, match_day: 14).each do |fixture|
-  MemberGuess.create(
-    home_goals_guess: rand(0..4),
-    away_goals_guess: rand(0..2),
-    member_id: 1,
-    fixture_id: fixture.id
-  )
-  (3..8).each do |id|
+  # MemberGuess.create(
+  #   home_goals_guess: rand(0..4),
+  #   away_goals_guess: rand(0..2),
+  #   member_id: 1,
+  #   fixture_id: fixture.id
+  # )
+  lewagoneers_members = Member.where(community_id: 1)
+  lewagoneers_members.each do |member|
       MemberGuess.create(
       home_goals_guess: rand(0..4),
       away_goals_guess: rand(0..2),
-      member_id: id,
+      member: member,
       fixture_id: fixture.id
     )
   end
@@ -1044,17 +1047,18 @@ end
 
 # Community LeWagoneers Member guesses Match day 15
 Fixture.where(league_id: 1, match_day: 15).each do |fixture|
-  MemberGuess.create(
-    home_goals_guess: rand(0..4),
-    away_goals_guess: rand(0..2),
-    member_id: 1,
-    fixture_id: fixture.id
-  )
-  (3..8).each do |id|
+  # MemberGuess.create(
+  #   home_goals_guess: rand(0..4),
+  #   away_goals_guess: rand(0..2),
+  #   member_id: 1,
+  #   fixture_id: fixture.id
+  # )
+  lewagoneers_members = Member.where(community_id: 1)
+  lewagoneers_members.each do |member|
       MemberGuess.create(
       home_goals_guess: rand(0..4),
       away_goals_guess: rand(0..2),
-      member_id: id,
+      member: member,
       fixture_id: fixture.id
     )
   end
@@ -1064,51 +1068,54 @@ puts "Generated member guesses for LeWagoneers..."
 
 # Community TheBorcherts Member guesses Match day 12
 Fixture.where(league_id: 3, match_day: 12).each do |fixture|
-  MemberGuess.create(
-    home_goals_guess: rand(0..4),
-    away_goals_guess: rand(0..2),
-    member_id: 2,
-    fixture_id: fixture.id
-  )
-  (9..14).each do |id|
+  # MemberGuess.create(
+  #   home_goals_guess: rand(0..4),
+  #   away_goals_guess: rand(0..2),
+  #   member_id: 2,
+  #   fixture_id: fixture.id
+  # )
+  borchert_members = Member.where(community_id: 2)
+  borchert_members.each do |member|
       MemberGuess.create(
       home_goals_guess: rand(0..4),
       away_goals_guess: rand(0..2),
-      member_id: id,
+      member: member,
       fixture_id: fixture.id
     )
   end
 end
 # Community TheBorcherts Member guesses Match day 13
 Fixture.where(league_id: 3, match_day: 13).each do |fixture|
-  MemberGuess.create(
-    home_goals_guess: rand(0..4),
-    away_goals_guess: rand(0..2),
-    member_id: 2,
-    fixture_id: fixture.id
-  )
-  (9..14).each do |id|
+  # MemberGuess.create(
+  #   home_goals_guess: rand(0..4),
+  #   away_goals_guess: rand(0..2),
+  #   member_id: 2,
+  #   fixture_id: fixture.id
+  # )
+  borchert_members = Member.where(community_id: 2)
+  borchert_members.each do |member|
       MemberGuess.create(
       home_goals_guess: rand(0..4),
       away_goals_guess: rand(0..2),
-      member_id: id,
+      member: member,
       fixture_id: fixture.id
     )
   end
 end
 # Community TheBorcherts Member guesses Match day 14
 Fixture.where(league_id: 3, match_day: 14).each do |fixture|
-  MemberGuess.create(
-    home_goals_guess: rand(0..4),
-    away_goals_guess: rand(0..2),
-    member_id: 2,
-    fixture_id: fixture.id
-  )
-  (9..14).each do |id|
+  # MemberGuess.create(
+  #   home_goals_guess: rand(0..4),
+  #   away_goals_guess: rand(0..2),
+  #   member_id: 2,
+  #   fixture_id: fixture.id
+  # )
+  borchert_members = Member.where(community_id: 2)
+  borchert_members.each do |member|
       MemberGuess.create(
       home_goals_guess: rand(0..4),
       away_goals_guess: rand(0..2),
-      member_id: id,
+      member: member,
       fixture_id: fixture.id
     )
   end
