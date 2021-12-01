@@ -3,23 +3,8 @@
 @import "avatar";
 @import "navbar";
 @import "form";
+@import "tabs";
 
-#communities-index-title h2 {
-  color: rgb(193, 127, 5);
-  display: flex;
-  justify-content: center;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-row-gap: 16px;
-}
-.card-category {
-  height: 300px;
-  background-size: cover;
-  margin: 50px;
-}
 
 // a {
 //   color:rgb(193, 127, 5);
