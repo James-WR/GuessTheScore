@@ -1,6 +1,8 @@
 .column {
   float: left;
   width: 50%;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 /* Clear floats after the columns */
@@ -11,8 +13,48 @@
 }
 
 #show-h2 {
-  color: rgb(193, 127, 5);
+  color: $dark-orange;
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
+}
+#show-h3 {
+  padding-top: 40px;
+}
+
+.nav-link {
+  color: $dark-green;
+  font-weight: 700;
+
+}
+.tab-pane{
+  background: white;
+}
+
+#show-form{
+   padding-bottom: 40px;
+}
+
+.tabs-underlined {
+  display: flex;
+  align-items: center;
+}
+
+.tabs-underlined .tab-underlined {
+  color: black;
+  padding: 8px;
+  margin: 8px 16px;
+  opacity: .4;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
+}
+
+.tabs-underlined .tab-underlined.active {
+  opacity: 1;
+  border-bottom: 3px solid #555555;
+}
+
+.table {
+  background: white;
 }

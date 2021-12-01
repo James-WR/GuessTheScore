@@ -14,14 +14,13 @@
     </div>
   </div>
 </div>
-
 <div style= "position:absolute; top:0; height: 68vh; width: 100vw; background-position: center; background-size: cover;">
   <h1 id="header-text-main">Guess The Score</h1>
   <%= render "home_navbar.html" %>
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-6 text-center" style="margin-top: 150px">
-          <button type="button" class="btn btn-success btn-lg rounded-pill shadow-lg p-4 mr-4" data-toggle="modal" data-target="#exampleModal">Create Your League</button>
+          <button type="button" class="btn btn-success btn-lg rounded-pill shadow-lg p-4 mr-4" id="button-1" data-toggle="modal" data-target="#exampleModal">Create Your League</button>
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -43,13 +42,36 @@
             </div>
           </div>
         </div>
-          <button type="button" class="btn btn-primary btn-lg rounded-pill shadow-lg p-4 ml-4">Join A League</button>
+          <button type="button" class="btn btn-primary btn-lg rounded-pill shadow-lg p-4 ml-4" data-toggle="modal" data-target="#secondModal">Join A League</button>
+          <div class="modal fade" id="secondModal" tabindex="-1" role="dialog" aria-labelledby="secondModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Join a community</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <%= form_tag join_communities_path, method: :update do %>
+                  <%= text_field_tag :query,
+                    params[:query],
+                    class: "form-control",
+                    placeholder: "Paste your unique league code here"
+                  %>
+                  <br>
+                  <%= submit_tag "Submit", class: "btn btn-primary" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
         </div>
       </div class="row">
     </div class="container">
 </div>
 <div class="container">
-  <div class="d-flex align-content-stretch justify-content-between">
+  <div class="d-flex align-content-stretch justify-content-between" id="home-page-text">
     <div class="shadow-lg p-3 mb-5 bg-white rounded m-2 mt-1 mt-3 media-body">
         <h2>1. Create A League</h2>
           <p>Choose a name for your fledgling community of keen football result predictors.
