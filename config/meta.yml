@@ -1,0 +1,5 @@
+meta_product_name: "Guess The Scores"
+meta_title: "Guess The Scores — Shoot Your Way to the Top"
+meta_description: "A fun guessing game for family, friends and work colleagues"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"
