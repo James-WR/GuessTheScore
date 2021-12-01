@@ -18,3 +18,9 @@ require("channels")
 
 import "bootstrap";
 import "controllers";
+
+document.addEventListener('turbolinks:load', () => {
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+})
