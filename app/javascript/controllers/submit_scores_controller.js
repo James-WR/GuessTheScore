@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["form"]
+  static targets = ["form", "button"]
   connect() {
     console.log("button clicked")
     console.log(this.formTargets)
@@ -15,5 +15,6 @@ export default class extends Controller {
       }, count)
       count += 50
     });
+    this.buttonTarget.submit()
   }
 }

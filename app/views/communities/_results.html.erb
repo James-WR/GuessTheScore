@@ -1,0 +1,9 @@
+<br>
+<div class="container" style="width:500px">
+  <div class="results">
+    <h2>Results for Match Day <%=@fixtures.first.match_day%> </h2>
+    <% @member_guesses_results.each do |guess| %>
+    <p><%= guess.fixture.home_team %> <%= guess.fixture.home_goals_result %> – <%= guess.fixture.away_goals_result %> <%= guess.fixture.away_team %></p>
+    <p>You guessed: <%= guess.home_goals_guess %> – <%= guess.away_goals_guess %></p>
+    <% end %>
+</div>
