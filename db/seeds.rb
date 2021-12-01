@@ -461,16 +461,106 @@ fixture = Fixture.new(
 fixture.save
 
 # match_day 16
+
 fixture = Fixture.new(
-  date: "2021-12-05",
+  date: "2021-12-11",
   match_day: 16,
-  home_team: "Aston Villa",
-  away_team: "Leicester",
-  home_goals_result: 3,
+  home_team: "Man City",
+  away_team: "Wolves",
+  home_goals_result: 0,
   away_goals_result: 3,
   league_id: 1
 )
 fixture.save
+
+fixture = Fixture.new(
+  date: "2021-12-11",
+  match_day: 16,
+  home_team: "Chelsea",
+  away_team: "Leeds",
+  home_goals_result: 2,
+  away_goals_result: 1,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-12-11",
+  match_day: 16,
+  home_team: "Liverpool",
+  away_team: "Aston Villa",
+  home_goals_result: 1,
+  away_goals_result: 0,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-12-11",
+  match_day: 16,
+  home_team: "Arsenal",
+  away_team: "Southampton",
+  home_goals_result: 2,
+  away_goals_result: 0,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-12-11",
+  match_day: 16,
+  home_team: "Norwich",
+  away_team: "Man United",
+  home_goals_result: 2,
+  away_goals_result: 3,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-12-12",
+  match_day: 16,
+  home_team: "Burnley",
+  away_team: "West Ham",
+  home_goals_result: 0,
+  away_goals_result: 0,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-12-12",
+  match_day: 16,
+  home_team: "Leicester",
+  away_team: "Newcastle",
+  home_goals_result: 1,
+  away_goals_result: 1,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-12-12",
+  match_day: 16,
+  home_team: "Brighton",
+  away_team: "Tottenham",
+  home_goals_result: 1,
+  away_goals_result: 3,
+  league_id: 1
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-12-12",
+  match_day: 16,
+  home_team: "Crystal Palace",
+  away_team: "Everton",
+  home_goals_result: 1,
+  away_goals_result: 0,
+  league_id: 1
+)
+fixture.save
+
 
 puts "Created Premier League fixtures..."
 
