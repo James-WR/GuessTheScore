@@ -30,24 +30,16 @@
         <%= render "overall_table"%>
       </div>
       <div class="tab-pane" id="overview" role="tabpanel" aria-labelledby="overview-tab">
-        <div class="row">
-          <div class="column">
-            <%= render "results"%>
-          </div>
-          <div class="column">
-          </div>
-        </div>
+        <%= render "results"%>
       <div>
     </div>
   </div>
-  <%#= link_to "Fast Forward", fast_forward_community_path, method: :post, data: {submit_scores_target: "button"} %>
 
   <div class="container" id="show-link">
     <div class="button">
       <%= link_to "<< Go back", communities_path, class:"btn btn-danger" %>
     </div>
-  <br>
   </div>
+  <br>
+  <br>
 </div>
-<br>
-<br>
