@@ -700,6 +700,74 @@ fixture = Fixture.new(
 )
 fixture.save
 
+# WSL Match Day 10
+
+fixture = Fixture.new(
+  date: "2021-12-19",
+  match_day: 10,
+  home_team: "Man United",
+  away_team: "Aston Villa",
+  home_goals_result: 2,
+  away_goals_result: 0,
+  league_id: 2
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-12-19",
+  match_day: 10,
+  home_team: "Chelsea",
+  away_team: "West Ham",
+  home_goals_result: 3,
+  away_goals_result: 1,
+  league_id: 2
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-12-19",
+  match_day: 10,
+  home_team: "Tottenham",
+  away_team: "Everton",
+  home_goals_result: 1,
+  away_goals_result: 0,
+  league_id: 2
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-12-19",
+  match_day: 10,
+  home_team: "Leicester",
+  away_team: "Birmingham",
+  home_goals_result: 0,
+  away_goals_result: 0,
+  league_id: 2
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-12-19",
+  match_day: 10,
+  home_team: "Man City",
+  away_team: "Reading",
+  home_goals_result: 1,
+  away_goals_result: 1,
+  league_id: 2
+)
+fixture.save
+
+fixture = Fixture.new(
+  date: "2021-12-19",
+  match_day: 10,
+  home_team: "Arsenal",
+  away_team: "Brighton",
+  home_goals_result: 2,
+  away_goals_result: 1,
+  league_id: 2
+)
+fixture.save
+
 puts "Created WSL fixtures..."
 
 # Bundesliga match day 12
