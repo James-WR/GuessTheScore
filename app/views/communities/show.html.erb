@@ -16,7 +16,7 @@
         <a class="nav-link tab-bg" id="overall-table-tab" data-toggle="tab" href="#overall-table" role="tab" aria-controls="overall-table" aria-selected="false">Overall Table</a>
       </li>
       <li class="nav-item" role="presentation">
-        <a class="nav-link tab-bg" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="false">Overview</a>
+        <a class="nav-link tab-bg" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="false">Results</a>
       </li>
     </ul>
     <div class="tab-content">
@@ -32,13 +32,10 @@
       <div class="tab-pane" id="overview" role="tabpanel" aria-labelledby="overview-tab">
         <div class="row">
           <div class="column">
-            <%= render "form"%>
+            <%= render "results_form"%>
           </div>
           <div class="column">
-            <%= render "weekly_table"%>
-            <%= render "overall_table"%>
           </div>
-        </div>
       <div>
     </div>
   </div>
