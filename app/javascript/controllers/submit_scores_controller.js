@@ -4,12 +4,12 @@ export default class extends Controller {
   static targets = ["form", "main"];
 
   submit() {
-    let count = 10
+    let count = 50
     this.formTargets.forEach((form) => {
       setTimeout(function() {
         form.submit()
       }, count)
-      count += 10
+      count += 50
     });
   }
   update() {
