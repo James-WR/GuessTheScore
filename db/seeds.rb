@@ -285,6 +285,8 @@ fixture = Fixture.new(
   away_goals_result: 2,
   league_id: 1
 )
+fixture.save
+
 fixture = Fixture.new(
   date: "2021-12-01",
   match_day: 14,
@@ -294,6 +296,8 @@ fixture = Fixture.new(
   away_goals_result: 3,
   league_id: 1
 )
+fixture.save
+
 fixture = Fixture.new(
   date: "2021-12-01",
   match_day: 14,
@@ -303,6 +307,8 @@ fixture = Fixture.new(
   away_goals_result: 0,
   league_id: 1
 )
+fixture.save
+
 fixture = Fixture.new(
   date: "2021-12-01",
   match_day: 14,
@@ -312,6 +318,8 @@ fixture = Fixture.new(
   away_goals_result: 2,
   league_id: 1
 )
+fixture.save
+
 fixture = Fixture.new(
   date: "2021-12-01",
   match_day: 14,
@@ -321,6 +329,8 @@ fixture = Fixture.new(
   away_goals_result: 1,
   league_id: 1
 )
+fixture.save
+
 fixture = Fixture.new(
   date: "2021-12-01",
   match_day: 14,
@@ -330,6 +340,8 @@ fixture = Fixture.new(
   away_goals_result: 3,
   league_id: 1
 )
+fixture.save
+
 fixture = Fixture.new(
   date: "2021-12-01",
   match_day: 14,
@@ -339,6 +351,8 @@ fixture = Fixture.new(
   away_goals_result: 2,
   league_id: 1
 )
+fixture.save
+
 fixture = Fixture.new(
   date: "2021-12-02",
   match_day: 14,
@@ -348,6 +362,8 @@ fixture = Fixture.new(
   away_goals_result: 0,
   league_id: 1
 )
+fixture.save
+
 fixture = Fixture.new(
   date: "2021-12-02",
   match_day: 14,
