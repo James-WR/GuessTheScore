@@ -1,9 +1,17 @@
 <br>
-<div class="container" style="width:500px">
+<div class="container" style="width:800px">
   <div class="results">
     <h2>Results for Match Day <%=@fixtures.first.match_day%> </h2>
     <% @member_guesses_results.each do |guess| %>
-    <p><%= guess.fixture.home_team %> <%= guess.fixture.home_goals_result %> – <%= guess.fixture.away_goals_result %> <%= guess.fixture.away_team %></p>
-    <p>You guessed: <%= guess.home_goals_guess %> – <%= guess.away_goals_guess %></p>
+    <p><%= guess.fixture.home_team %> <%= guess.fixture.home_goals_result %> – <%= guess.fixture.away_goals_result %> <%= guess.fixture.away_team %>
+    <% if guess.home_goals_guess == guess.fixture.home_goals_result && guess.away_goals_guess == guess.fixture.away_goals_result %>
+      <p id="green">Congrats! You guessed: <%= guess.home_goals_guess %> – <%= guess.away_goals_guess %>
+    <% elsif guess.home_goals_guess > guess.away_goals_guess && guess.fixture.home_goals_result > guess.fixture.away_goals_result %>
+      <p id="orange">Good job! You guessed: <%= guess.home_goals_guess %> – <%= guess.away_goals_guess %></p>
+    <% elsif guess.away_goals_guess > guess.home_goals_guess && guess.fixture.away_goals_result > guess.fixture.home_goals_result %>
+      <p id="orange">Good job! You guessed: <%= guess.home_goals_guess %> – <%= guess.away_goals_guess %></p>
+    <% else %>
+      <p id="red">Sorry, you guessed: <%= guess.home_goals_guess %> – <%= guess.away_goals_guess %></p>
+    <% end %>
     <% end %>
 </div>
