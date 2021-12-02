@@ -3,7 +3,9 @@
 @import "avatar";
 @import "navbar";
 @import "form";
+@import "tabs";
 
+<<<<<<< HEAD
 #communities-index-title h2 {
   color: rgb(193, 127, 5);
   display: flex;
@@ -27,6 +29,8 @@
   display: flex;
   flex-direction: column;
 }
+=======
+>>>>>>> 55879fb2cee62dbb221bc2da3e655e23508c5bb1
 
 #index-card-input{
   display: none;

@@ -29,9 +29,15 @@ class CommunitiesController < ApplicationController
     @member_guesses = current_user.member_guesses.order(created_at: :asc).select do |m|
       m.fixture.match_day == @community.league.match_day && m.fixture.league == @community.league
     end
-    fixtures = Fixture.with_home_results.with_away_results.where(league_id: @community.league.id,
+    @member_guesses_results = current_user.member_guesses.order(created_at: :asc).select do |m|
+      m.fixture.match_day == @community.league.match_day - 1 && m.fixture.league == @community.league
+    end
+    @member_guesses_fixed = current_user.member_guesses.order(created_at: :asc).select do |m|
+      m.fixture.match_day == 15 && m.fixture.league == @community.league
+    end
+    @fixtures = Fixture.with_home_results.with_away_results.where(league_id: @community.league.id,
                                                                  match_day: @community.league.match_day - 1)
-    generate_member_points(fixtures)
+    generate_member_points(@fixtures)
     @sorted_weekly = @community.members.order(weekly_points: :desc, weekly_exact: :desc, weekly_fuzzy: :desc)
     @sorted_members = @community.members.order(overall_points: :desc, overall_exact: :desc, overall_fuzzy: :desc)
   end
@@ -77,7 +83,7 @@ class CommunitiesController < ApplicationController
   def create
     @community = Community.new(community_params)
     @community.owner = current_user
-    data = "#{@community.owner.email}#{@community.community_name}#{Time.now}"
+    data = "#{@community.owner.email}#{@community.community_name}"
     @community.join_code = Digest::SHA256.hexdigest data
 
     if @community.save
