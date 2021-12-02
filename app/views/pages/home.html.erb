@@ -20,7 +20,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="home-buttons col-12 col-lg-6 text-center">
-          <button type="button" class="btn btn-success btn-lg rounded-pill shadow-lg p-4 mr-4 home-width-button" id="button-1" data-toggle="modal" data-target="#exampleModal">Create A Community</button>
+          <button type="button" class="btn btn-success btn-lg rounded-pill shadow-lg p-4 mr-4 home-width-button" id="button-1" data-toggle="modal" data-target="#exampleModal">Create a Community</button>
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -30,7 +30,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                <h2>Create A Community</h2>
+                <h2>Create a Community</h2>
                 <%= simple_form_for(@community) do |f| %>
                   <%= f.input :community_name %>
                   <%= f.association :league, label_method: :league_name %>
@@ -42,12 +42,12 @@
             </div>
           </div>
         </div>
-          <button type="button" class="btn btn-primary btn-lg rounded-pill shadow-lg p-4 ml-4 home-width-button" data-toggle="modal" data-target="#secondModal">Join A Community</button>
+          <button type="button" class="btn btn-primary btn-lg rounded-pill shadow-lg p-4 ml-4 home-width-button" data-toggle="modal" data-target="#secondModal">Join a Community</button>
           <div class="modal fade" id="secondModal" tabindex="-1" role="dialog" aria-labelledby="secondModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">Join a community</h5>
+                <h5 class="modal-title">Join a Community</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -70,7 +70,7 @@
       </div>
     </div>
   <div class="home-page-cards container">
-    <div class="d-flex align-content-stretch justify-content-between" id="home-page-text">
+    <div class="d-flex align-content-stretch justify-content-between">
       <div class="shadow-lg p-3 mb-5 bg-white rounded m-2 mt-1 mt-3 media-body">
           <h2>1. Create Community</h2>
             <p>Choose a name for your fledgling community of keen football result predictors.
