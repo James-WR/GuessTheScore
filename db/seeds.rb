@@ -1,16 +1,16 @@
 user = User.create(
   first_name: "Jonathan",
-  last_name: "Smith",
-  username: "jsmith",
+  last_name: "Bilson",
+  username: "jbilson",
   email: "jsmith@gmail.com",
   password: "123456"
 )
 
 user = User.create(
-  first_name: "Alicia",
-  last_name: "Borchert",
-  username: "aborchert",
-  email: "aborchert@gmail.com",
+  first_name: "James",
+  last_name: "Robbs",
+  username: "jrobbs",
+  email: "james@originmaster.com",
   password: "123456"
 )
 
@@ -32,7 +32,7 @@ puts "Created 12 random users..."
 league = League.new(league_name: "Premier League", match_day: 15)
 league.save
 
-league = League.new(league_name: "Women's Super League", match_day: 9)
+league = League.new(league_name: "Women's Super League", match_day: 15)
 league.save
 
 league = League.new(league_name: "Bundesliga", match_day: 14)
@@ -584,7 +584,7 @@ puts "Created Premier League fixtures..."
 
 fixture = Fixture.new(
   date: "2021-11-20",
-  match_day: 8,
+  match_day: 14,
   home_team: "Man City",
   away_team: "Aston Villa",
   home_goals_result: 5,
@@ -595,7 +595,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-11-21",
-  match_day: 8,
+  match_day: 14,
   home_team: "Leicester",
   away_team: "Everton",
   home_goals_result: 0,
@@ -606,7 +606,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-11-21",
-  match_day: 8,
+  match_day: 14,
   home_team: "Chelsea",
   away_team: "Birmingham",
   home_goals_result: 5,
@@ -617,7 +617,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-11-21",
-  match_day: 8,
+  match_day: 14,
   home_team: "Man United",
   away_team: "Arsenal",
   home_goals_result: 0,
@@ -628,7 +628,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-11-21",
-  match_day: 8,
+  match_day: 14,
   home_team: "Reading",
   away_team: "Brighton",
   home_goals_result: 2,
@@ -639,7 +639,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-11-21",
-  match_day: 8,
+  match_day: 14,
   home_team: "West Ham",
   away_team: "Tottenham",
   home_goals_result: 1,
@@ -652,7 +652,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-11",
-  match_day: 9,
+  match_day: 15,
   home_team: "Reading",
   away_team: "Chelsea",
   home_goals_result: 0,
@@ -663,7 +663,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-12",
-  match_day: 9,
+  match_day: 15,
   home_team: "Brighton",
   away_team: "Man United",
   home_goals_result: 0,
@@ -674,7 +674,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-12",
-  match_day: 9,
+  match_day: 15,
   home_team: "Everton",
   away_team: "West Ham",
   home_goals_result: 1,
@@ -685,7 +685,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-12",
-  match_day: 9,
+  match_day: 15,
   home_team: "Birmingham",
   away_team: "Man City",
   home_goals_result: 0,
@@ -696,7 +696,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-12",
-  match_day: 9,
+  match_day: 15,
   home_team: "Aston Villa",
   away_team: "Tottenham",
   home_goals_result: 1,
@@ -707,7 +707,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-12",
-  match_day: 9,
+  match_day: 15,
   home_team: "Arsenal",
   away_team: "Leicester",
   home_goals_result: 2,
@@ -720,7 +720,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-19",
-  match_day: 10,
+  match_day: 16,
   home_team: "Man United",
   away_team: "Aston Villa",
   home_goals_result: 2,
@@ -731,7 +731,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-19",
-  match_day: 10,
+  match_day: 16,
   home_team: "Chelsea",
   away_team: "West Ham",
   home_goals_result: 3,
@@ -742,7 +742,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-19",
-  match_day: 10,
+  match_day: 16,
   home_team: "Tottenham",
   away_team: "Everton",
   home_goals_result: 1,
@@ -753,7 +753,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-19",
-  match_day: 10,
+  match_day: 16,
   home_team: "Leicester",
   away_team: "Birmingham",
   home_goals_result: 0,
@@ -764,7 +764,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-19",
-  match_day: 10,
+  match_day: 16,
   home_team: "Man City",
   away_team: "Reading",
   home_goals_result: 1,
@@ -775,7 +775,7 @@ fixture.save
 
 fixture = Fixture.new(
   date: "2021-12-19",
-  match_day: 10,
+  match_day: 16,
   home_team: "Arsenal",
   away_team: "Brighton",
   home_goals_result: 2,
@@ -1201,25 +1201,27 @@ community = Community.new(
 community.save
 
 community = Community.new(
-  community_name: "TheBorcherts",
+  community_name: "Rose And Crown",
   join_code: "896f96d1e19011dbe619175639e6c141391febdd9e993c082d6e19d2639bef3a",
-  owner_id: 2,
+  owner_id: 3,
   league_id: 3
 )
 community.save
 
 puts "Created two communities"
 
+Member.create(user_id: 1, community_id: 2, overall_exact: 0, overall_fuzzy: 0, overall_points: 0)
+
 exact = rand(0..12)
 fuzzy = rand(0..(12 - exact))
 
-member = Member.where(user_id: 1).first
+member = Member.where(user_id: 1, community_id: 1).first
 member.update(overall_exact: exact, overall_fuzzy: fuzzy, overall_points: (exact * 3) + fuzzy )
 
 exact = rand(0..12)
 fuzzy = rand(0..(12 - exact))
 
-member = Member.where(user_id: 2).first
+member = Member.where(user_id: 1, community_id: 2).first
 member.update(overall_exact: exact, overall_fuzzy: fuzzy, overall_points: (exact * 3) + fuzzy )
 
 puts "Added random points data for owners"
