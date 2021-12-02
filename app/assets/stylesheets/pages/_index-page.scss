@@ -1,8 +1,10 @@
 #communities-index-title h2 {
-  color: $dark-orange;
+  color: $green;
   display: flex;
   justify-content: center;
   padding-top: 20px;
+  font-size: 49px;
+  text-shadow: 2px 2px $white;
 }
 
 .cards {
@@ -18,8 +20,14 @@
   font-family: 'Roboto';
 }
 
+#index-photo {
+  background: asset_url("football-3.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 #index-h2 {
-  text-shadow: 2px 2px $dark-orange;
+  text-shadow: 2px 2px $red;
   text-align: center;
 }
 
@@ -66,6 +74,6 @@
 }
 
 .avatar-large {
-  height: 50px;
-  width: 50px;
+  height: 80px;
+  width: 80px;
 }

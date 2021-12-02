@@ -4,12 +4,13 @@
   padding-right: 25px;
   padding-left: 25px;
 }
-.photo {
+#show-photo {
   background: asset_url("football-3.png");
-  background-size: flex;
-  background-repeat: repeat;
-
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1100px;
 }
+
 /* Clear floats after the columns */
 .row:after {
   content: "";
@@ -38,6 +39,7 @@
   text-decoration: black;
   text-shadow: 2px 2px $dark-orange;
 }
+
 #show-h3 {
   padding-top: 40px;
 }
@@ -53,7 +55,6 @@
 // #guess-the-score-tab{
 //   color: $dark-green;
 //   font-weight: 700;
-
 // }
 
 // #weekly-table-tab{
@@ -71,14 +72,16 @@
 //   font-weight: 700;
 // }
 
-
-
 #show-form{
    padding-bottom: 40px;
 }
 
 #show-link{
   color: white;
+}
+
+#show-button{
+  margin-left: 15px;
 }
 
 .tabs-underlined {
