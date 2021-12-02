@@ -36,7 +36,7 @@ class CommunitiesController < ApplicationController
       m.fixture.match_day == 15 && m.fixture.league == @community.league
     end
     @fixtures = Fixture.with_home_results.with_away_results.where(league_id: @community.league.id,
-                                                                 match_day: @community.league.match_day - 1)
+                                                                  match_day: @community.league.match_day - 1)
     generate_member_points(@fixtures)
     @sorted_weekly = @community.members.order(weekly_points: :desc, weekly_exact: :desc, weekly_fuzzy: :desc)
     @sorted_members = @community.members.order(overall_points: :desc, overall_exact: :desc, overall_fuzzy: :desc)
@@ -60,7 +60,8 @@ class CommunitiesController < ApplicationController
       end
       weekly_points = (weekly_exact * 3) + weekly_fuzzy
       member.update(weekly_exact: weekly_exact, weekly_fuzzy: weekly_fuzzy, weekly_points: weekly_points)
-      member.update(overall_exact: member.overall_exact += weekly_exact, overall_fuzzy: member.overall_fuzzy += weekly_fuzzy, overall_points: member.overall_points += weekly_points)
+      member.update(overall_exact: member.overall_exact += weekly_exact,
+                    overall_fuzzy: member.overall_fuzzy += weekly_fuzzy, overall_points: member.overall_points += weekly_points)
     end
   end
 
