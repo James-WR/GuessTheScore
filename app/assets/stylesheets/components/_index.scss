@@ -14,15 +14,18 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  position: relative;
-  }
+  position: absolute;
+}
 
 .card-category {
   height: 300px;
+  width: 400px;
   background-size: cover;
-  margin: 50px;
-  border-radius: 50px;
-  box-shadow: 10px -10px 10px black;
+  margin: 120px;
+  // border-radius: 45px;
+  box-shadow: 5px -5px 5px black;
+  display: flex;
+  flex-direction: column;
 }
 
 #index-card-input{
@@ -30,19 +33,32 @@
 }
 
 #index-card-button {
-  position: absolute;
-  bottom: 0;
-  margin: 80px;
-}
+  font-family: Arial, Helvetica, sans-serif;
+  }
 
 .cards a {
   color: white;
+  text-decoration: none;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: 'Permanent Marker';
   font-weight: bold;
   font-size: 30px;
-  margin-top: 120px;
+    // margin-top: 120px;
+}
+
+.cards a:hover {
+  color: black;
+}
+
+#link-text a{
+  text-align: center;
+}
+
+.avatar-large {
+  height: 50px;
+  width: 50px;
 }
 
 
