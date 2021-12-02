@@ -7,14 +7,14 @@
         <div data-submit-scores-target="main" class="">
           <%= simple_form_for([@community, member_guess], html: {class: "guess-score", data:{submit_scores_target: "form"}}) do |f| %>
             <div class="d-flex flex-row">
-              <div class="mr-4" style="width:110px">
+              <div class="mr-4" style="width:110px; text-align: right; padding-top: 8px;">
                 <%= f.label member_guess.fixture.home_team, label: member_guess.fixture.home_team, label_html: {class: "form-guess-label"} %>
               </div>
-              <div class="d-flex ml-3 mr-3" style="width:230px">
+              <div class="d-flex ml-3 mr-3" style="width:197px">
                 <%= f.input :home_goals_guess, label: false, input_html: {min: '0', class: "form-guess mr-3", id:"form-input-1", data:{controller: "input-scores", action:"focusout->input-scores#input", input_scores_new_class:"green"}}%>
                 <%= f.input :away_goals_guess, label: false, input_html: {min: '0', class: "form-guess", id:"form-input-2", data:{controller: "input-scores", action:"focusout->input-scores#input", input_scores_new_class:"green"} } %>
               </div>
-              <div style="width:110px">
+              <div style="width:110px; padding-top: 8px">
                 <%= f.label member_guess.fixture.away_team, label: member_guess.fixture.away_team, label_html: {class: "form-guess-label"} %>
                 <%= f.input :fixture, as: :hidden, input_html: {value: member_guess.fixture.id} %>
               </div>
@@ -40,7 +40,7 @@
       <% end %>
     <% end %>
   </div>
-  <button class="btn btn-primary btn-lg" data-action="click->submit-scores#submit">Submit all scores</button>
+  <%= button_to 'Submit all scores', '', class: "btn btn-primary btn-lg", 'data-action': "click->submit-scores#submit", disabled: (@community.league.match_day != @member_guesses_fixed.first.fixture.match_day) %>
   <%= form_tag fast_forward_community_path, method: :post, data: {submit_scores_target: "form"} do %>
     <div class="d-none">
       <%= text_field_tag :query, params[:query] %>
