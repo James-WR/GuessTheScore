@@ -18,25 +18,24 @@
       <div class="card-category" style="background-image: url(<%=image_path image%>);">
         <%= image_tag logo, class: "avatar-large m-3" %>
           <div class="d-flex flex-row justify-content-center align-items-center">
-              <h2 id="index-h2"><%= community.community_name %></h2>
+            <h2 id="index-h2"><%= community.community_name %></h2>
           </div>
           <div class="mt-auto" data-controller="clipboard" data-clipboard-feedback-text-value="Copied!" data-clipboard-code-value=<%= community.join_code %>>
-            <div id="index-card-input">
-              <input data-clipboard-target="input" type="text" value=@communities.join_code readonly>
-              <% if community.owner == current_user %>
-            </div>
+            <% if community.owner == current_user %>
+              <div id="index-card-input">
+                <input data-clipboard-target="input" type="text" value=@communities.join_code readonly>
+              </div>
               <div>
                 <button class="btn btn-primary" id="index-card-button" data-action="click->clipboard#copy">Copy Join Code</button>
               </div>
-            </div>
             <%end%>
-        </div>
+          </div>
+      </div>
       <% end %>
     <% end %>
   </div>
 
-
-  <div class="button" id="index-page-button">
+  <div class="index-button" id="index-page-button">
     <%= link_to "<< Back to Home", root_path, class: "btn btn-danger" %>
   </div>
   <br>
