@@ -46,15 +46,17 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
 .cards a {
   color: white;
   text-decoration: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family: 'Roboto';
+  font-family: 'Permanent Marker';
   font-weight: bold;
   font-size: 30px;
+    // margin-top: 120px;
 }
 
 .cards a:hover {

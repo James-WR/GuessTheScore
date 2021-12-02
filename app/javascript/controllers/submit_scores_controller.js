@@ -1,12 +1,8 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["form", "button"]
-  connect() {
-    console.log("button clicked")
-    console.log(this.formTargets)
-    console.log(this.formTargets.slice(0,2))
-  }
+  static targets = ["form", "main"];
+
   submit() {
     let count = 50
     this.formTargets.forEach((form) => {
@@ -16,5 +12,8 @@ export default class extends Controller {
       count += 50
     });
     this.buttonTarget.submit()
+  }
+  update() {
+    this.mainTarget.classList.remove("d-none");
   }
 }

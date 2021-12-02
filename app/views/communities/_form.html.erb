@@ -1,37 +1,58 @@
 <div class="container form-container" data-controller="submit-scores" style="width:500px" id="show-form">
   <h3 id="show-h3">Guess The Scores!</h3>
   <br>
-    <% @member_guesses_fixed.each do |member_guess| %>
-      <div class="guess-score">
-        <% if params[:action] == "show" && params[:controller] == "communities" %>
+  <div class="d-flex flex-column justify-content-around" data-action="click->submit-scores#update">
+    <% @member_guesses.each do |member_guess| %>
+      <% if params[:action] == "show" && params[:controller] == "communities" %>
+        <div data-submit-scores-target="main" class="">
           <%= simple_form_for([@community, member_guess], html: {class: "guess-score", data:{submit_scores_target: "form"}}) do |f| %>
-            <%= f.label member_guess.fixture.home_team, label_html: {class: "form-guess-label"} %>
-            <%= f.input :home_goals_guess, label: false, input_html: {class: "form-guess"} %>
-            <%= f.input :away_goals_guess, label: false, input_html: {class: "form-guess"} %>
-            <%= f.label member_guess.fixture.away_team, label_html: {class: "form-guess-label"} %>
-          <%= f.input :fixture, as: :hidden, input_html: {value: member_guess.fixture.id} %>
-          <div class="submit-order-form" style="">
-            <%= f.submit "Submit", class: "btn btn-primary", style:"display:none" %>
-          </div>
+            <div class="d-flex flex-row">
+              <div class="mr-4" style="width:110px">
+                <%= f.label member_guess.fixture.home_team, label: member_guess.fixture.home_team, label_html: {class: "form-guess-label"} %>
+              </div>
+              <div class="d-flex ml-3 mr-3" style="width:230px">
+                <%= f.input :home_goals_guess, label: false, input_html: {min: '0', class: "form-guess mr-3", id:"form-input-1", data:{controller: "input-scores", action:"focusout->input-scores#input", input_scores_new_class:"green"}}%>
+                <%= f.input :away_goals_guess, label: false, input_html: {min: '0', class: "form-guess", id:"form-input-2", data:{controller: "input-scores", action:"focusout->input-scores#input", input_scores_new_class:"green"} } %>
+              </div>
+              <div style="width:110px">
+                <%= f.label member_guess.fixture.away_team, label: member_guess.fixture.away_team, label_html: {class: "form-guess-label"} %>
+                <%= f.input :fixture, as: :hidden, input_html: {value: member_guess.fixture.id} %>
+              </div>
+            </div>
+            <div class="submit-order-form">
+              <%= f.submit "Submit", class: "btn btn-primary", style:"display:none" %>
+            </div>
           <% end %>
-        <% else %>
+        </div>
+      <% else %>
+        <div class="guess-score">
           <%= simple_form_for([@community, member_guess], html: {data:{submit_scores_target: "form"}}) do |f| %>
             <%= f.label member_guess.fixture.home_team %>
             <%= f.input :home_goals_guess, label: false %>
             <%= f.input :away_goals_guess, label: false %>
             <%= f.label member_guess.fixture.away_team %>
-          <%= f.input :fixture, as: :hidden, input_html: {value: member_guess.fixture.id} %>
-          <div class="submit-order-form">
-            <%= f.submit "Submit", class: "btn btn-primary", style:"display:none", data:{submit_scores_target: "button"} %>
-          </div>
+            <%= f.input :fixture, as: :hidden, input_html: {value: member_guess.fixture.id} %>
+            <div class="submit-order-form">
+              <%= f.submit "Submit", class: "btn btn-primary", style:"display:none", data:{submit_scores_target: "button"} %>
+            </div>
           <% end %>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     <% end %>
+  </div>
   <button class="btn btn-primary btn-lg" data-action="click->submit-scores#submit">Submit all scores</button>
   <%= form_tag fast_forward_community_path, method: :post, data: {submit_scores_target: "form"} do %>
-  <div class="d-none">
-    <%= text_field_tag :query, params[:query] %>
-  </div>
+    <div class="d-none">
+      <%= text_field_tag :query, params[:query] %>
+    </div>
   <% end %>
 </div>
+
+
+<%#
+  <div class="guess-score" id="guess-score-overlay">
+          <p><%=member_guess.fixture.home_team %></p>
+          <%# <%= member_guess.home_goals_guess %>
+          <%# <%= member_guess.away_goals_guess %>
+          <%# <p> <%=member_guess.fixture.away_team %> </p>
+        <%# </div> %>
