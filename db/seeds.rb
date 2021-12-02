@@ -1204,7 +1204,7 @@ community = Community.new(
   community_name: "Rose And Crown",
   join_code: "896f96d1e19011dbe619175639e6c141391febdd9e993c082d6e19d2639bef3a",
   owner_id: 3,
-  league_id: 3
+  league_id: 2
 )
 community.save
 
