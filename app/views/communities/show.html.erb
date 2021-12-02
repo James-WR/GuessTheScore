@@ -22,23 +22,33 @@
     <div class="tab-content">
       <div class="tab-pane active" id="guess-the-score" role="tabpanel" aria-labelledby="guess-the-score-tab">
         <%= render "form"%>
+        <div class="button" id="show-button">
+          <%= link_to "<< Go back", communities_path, class:"btn btn-danger" %>
+        </div>
+        <br>
       </div>
       <div class="tab-pane" id="weekly-table" role="tabpanel" aria-labelledby="weekly-table-tab">
         <%= render "weekly_table"%>
+        <div class="button" id="show-button">
+          <%= link_to "<< Go back", communities_path, class:"btn btn-danger" %>
+        </div>
+        <br>
       </div>
       <div class="tab-pane" id="overall-table" role="tabpanel" aria-labelledby="overall-table-tab">
         <%= render "overall_table"%>
+        <div class="button" id="show-button">
+          <%= link_to "<< Go back", communities_path, class:"btn btn-danger" %>
+        </div>
+        <br>
       </div>
       <div class="tab-pane" id="overview" role="tabpanel" aria-labelledby="overview-tab">
         <%= render "results"%>
-      </div>
-    </div>
-    <div class="show-button" id="show-link">
-      <div class="button" id="show-button">
-        <%= link_to "<< Go back", communities_path, class:"btn btn-danger" %>
+        <div class="button" id="show-button">
+          <%= link_to "<< Go back", communities_path, class:"btn btn-danger" %>
+        </div>
+        <br>
       </div>
       <br>
     </div>
-    <br>
   </div>
 </div>

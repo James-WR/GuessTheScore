@@ -8,7 +8,7 @@
   background: asset_url("football-3.png");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 1100px;
+  height: 1000px;
 }
 
 /* Clear floats after the columns */
@@ -18,16 +18,23 @@
   clear: both;
 }
 
+#h2-results{
+  padding-top: 10px;
+}
+
 #green {
-  color: $dark-green;
+  color: green;
+  font-weight: 900;
 }
 
 #orange {
-  color: $dark-orange;
+  color: rgb(71, 71, 231);
+  font-weight: 900;
 }
 
 #red {
-  color: darkred;
+  color: rgb(241, 7, 7);
+  font-weight: 900;
 }
 
 #show-h2 {
@@ -50,6 +57,23 @@
 
 #show-link {
   background: rgba(234, 233, 233, 0.929)
+}
+
+.team-name {
+  width: 120px;
+  display: inline-block;
+}
+
+#away-team{
+  text-align: left;
+}
+#home-team{
+  text-align: right;
+}
+
+#team-results{
+  margin: 0 20px;
+  font-family: $bungee;
 }
 
 // #guess-the-score-tab{
@@ -82,6 +106,7 @@
 
 #show-button{
   margin-left: 15px;
+  display: flex;
 }
 
 .tabs-underlined {
