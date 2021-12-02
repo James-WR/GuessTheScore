@@ -14,6 +14,5 @@ export default class extends Controller {
   }
   update() {
     this.mainTarget.classList.remove("d-none");
-
   }
 }
