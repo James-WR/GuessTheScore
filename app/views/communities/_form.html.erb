@@ -4,7 +4,7 @@
   <div class="d-flex flex-column justify-content-around" data-action="click->submit-scores#update">
     <% @member_guesses_fixed.each do |member_guess| %>
       <% if params[:action] == "show" && params[:controller] == "communities" %>
-        <div data-submit-scores-target="main" class="">
+        <div data-submit-scores-target="main" id="guess-score-overlay" class="">
           <%= simple_form_for([@community, member_guess], html: {class: "guess-score", data:{submit_scores_target: "form"}}) do |f| %>
             <div class="d-flex flex-row">
               <div class="mr-4" style="width:110px; text-align: right; padding-top: 8px;">
@@ -25,7 +25,7 @@
           <% end %>
         </div>
       <% else %>
-        <div class="guess-score">
+        <div class="guess-score" >
           <%= simple_form_for([@community, member_guess], html: {data:{submit_scores_target: "form"}}) do |f| %>
             <%= f.label member_guess.fixture.home_team %>
             <%= f.input :home_goals_guess, label: false %>
