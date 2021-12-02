@@ -4,7 +4,7 @@
   justify-content: center;
   padding-top: 20px;
   font-size: 49px;
-  // text-shadow: 2px 2px $white;
+
 }
 
 .cards {
@@ -53,17 +53,15 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
 .cards a {
   color: white;
   text-decoration: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family: 'Permanent Marker';
+  font-family: 'Roboto';
   font-weight: bold;
   font-size: 30px;
-    // margin-top: 120px;
 }
 
 .cards a:hover {
