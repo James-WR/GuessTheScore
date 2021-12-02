@@ -1262,5 +1262,23 @@ puts "Populated second community"
     end
 
 puts "Generated random scores for all member guesses..."
+
+user = User.create(
+  first_name: "Alicia",
+  last_name: "Borchert",
+  username: "aborchert",
+  email: "aborchert@gmail.com",
+  password: "123456"
+)
+
+user = User.create(
+  first_name: "Chris",
+  last_name: "Hampson",
+  username: "champson",
+  email: "cmh@gmail.com",
+  password: "123456"
+)
+
+puts "Created user accounts for Alicia and Chris"
 puts
 puts "Complete!"

@@ -83,7 +83,7 @@ class CommunitiesController < ApplicationController
   def create
     @community = Community.new(community_params)
     @community.owner = current_user
-    data = "#{@community.owner.email}#{@community.community_name}#{Time.now}"
+    data = "#{@community.owner.email}#{@community.community_name}"
     @community.join_code = Digest::SHA256.hexdigest data
 
     if @community.save
