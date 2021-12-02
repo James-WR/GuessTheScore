@@ -72,7 +72,7 @@ class CommunitiesController < ApplicationController
     fixtures = Fixture.with_home_results.with_away_results.where(league_id: @community.league.id,
                                                                  match_day: @community.league.match_day - 1)
     generate_member_points(fixtures)
-    redirect_to community_path(@community)
+    redirect_to community_path(@community), notice: "Scores submitted!"
   end
 
   def new

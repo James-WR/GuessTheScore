@@ -3,7 +3,8 @@ import { Controller } from "stimulus"
 export default class extends Controller {
   static targets = ["form", "main"];
 
-  submit() {
+  submit(event) {
+    event.target.disabled = true
     let count = 50
     this.formTargets.forEach((form) => {
       setTimeout(function() {
