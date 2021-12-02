@@ -1,4 +1,4 @@
-<div class="photo">
+<div class="photo" id="show-photo">
   <div class="show-page">
     <br>
       <h2 id="show-h2"><%= @community.community_name %></h2>
@@ -33,8 +33,8 @@
         <%= render "results"%>
       </div>
     </div>
-    <div class="container" id="show-link">
-      <div class="button">
+    <div class="show-button" id="show-link">
+      <div class="button" id="show-button">
         <%= link_to "<< Go back", communities_path, class:"btn btn-danger" %>
       </div>
       <br>
