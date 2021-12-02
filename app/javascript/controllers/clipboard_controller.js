@@ -9,6 +9,7 @@ export default class extends Controller {
 
   copy(event) {
     // this.inputTarget.select();
+    event.preventDefault()
     navigator.clipboard.writeText(this.codeValue)
     // document.execCommand('copy');
     event.currentTarget.disabled = true;

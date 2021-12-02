@@ -2,6 +2,7 @@ import { Controller } from "stimulus"
 
 export default class extends Controller {
   static targets = ["form", "main"];
+  }
 
   submit() {
     let count = 50
@@ -11,6 +12,7 @@ export default class extends Controller {
       }, count)
       count += 50
     });
+    this.buttonTarget.submit()
   }
   update() {
     this.mainTarget.classList.remove("d-none");

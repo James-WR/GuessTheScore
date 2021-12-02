@@ -1,10 +1,9 @@
 <div class="container form-container" data-controller="submit-scores" style="width:500px" id="show-form">
   <h3 id="show-h3">Guess The Scores!</h3>
   <br>
-  <div class="d-flex flex-column justify-content-around" data-action="click->submit-scores#update">
-    <% @member_guesses.each do |member_guess| %>
-      <% if params[:action] == "show" && params[:controller] == "communities" %>
-        <div data-submit-scores-target="main" class="">
+    <% @member_guesses_fixed.each do |member_guess| %>
+      <div class="guess-score">
+        <% if params[:action] == "show" && params[:controller] == "communities" %>
           <%= simple_form_for([@community, member_guess], html: {class: "guess-score", data:{submit_scores_target: "form"}}) do |f| %>
           <div class="d-flex flex-row">
             <div class="mr-4" style="width:110px">
@@ -44,6 +43,11 @@
     <% end %>
     </div>
   <button class="btn btn-primary btn-lg" data-action="click->submit-scores#submit">Submit all scores</button>
+  <%= form_tag fast_forward_community_path, method: :post, data: {submit_scores_target: "form"} do %>
+  <div class="d-none">
+    <%= text_field_tag :query, params[:query] %>
+  </div>
+  <% end %>
 </div>
 
 
