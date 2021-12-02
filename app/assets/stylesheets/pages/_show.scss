@@ -6,6 +6,9 @@
 }
 .photo {
   background: asset_url("football-3.png");
+  background-size: flex;
+  background-repeat: repeat;
+
 }
 /* Clear floats after the columns */
 .row:after {

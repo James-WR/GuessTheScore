@@ -1,37 +1,44 @@
-<div id="communities-index-title">
-  <h2>Communities Index</h2>
-</div>
-<div class="cards">
-  <% @communities.each do |community| %>
-    <% if community.league.league_name == "Premier League" %>
-      <% image = "premier_league2.png"%>
-        <% logo = "premier_league_logo_2.png" %>
-    <% elsif community.league.league_name == "Bundesliga" %>
-      <% image = "bundesliga2.png"%>
-        <% logo = "bundesliga_logo.png" %>
-    <% else community.league.league_name == "Women's Super League" %>
-      <% image = "womens_super_league2.png"%>
-        <% logo = "womens_super_league_logo.png" %>
-  <% end %>
-  <%= link_to community_path(community) do %>
-  <div class="card-category" style="background-image: url(<%=image_path image%>);">
-    <%= image_tag logo, class: "avatar-large m-3" %>
-      <div class="d-flex flex-row justify-content-center">
-        <% if community.owner == current_user %>
-          <h2><%= community.community_name %></h2>
-      </div>
-      <div class="mt-auto" data-controller="clipboard" data-clipboard-feedback-text-value="Copied!" data-clipboard-code-value=<%= community.join_code %>>
-        <div id="index-card-input">
-          <input data-clipboard-target="input" type="text" value=@communities.join_code readonly>
-        </div>
-          <div>
-            <button class="btn btn-primary" id="index-card-button" data-action="click->clipboard#copy">Copy Join Code</button>
+<div class="photo" id="index-page-photo">
+  <div id="communities-index-title">
+    <h2>Communities Index</h2>
+  </div>
+  <div class="cards">
+    <% @communities.each do |community| %>
+      <% if community.league.league_name == "Premier League" %>
+        <% image = "premier_league2.png"%>
+          <% logo = "premier_league_logo_2.png" %>
+      <% elsif community.league.league_name == "Bundesliga" %>
+        <% image = "bundesliga2.png"%>
+          <% logo = "bundesliga_logo.png" %>
+      <% else community.league.league_name == "Women's Super League" %>
+        <% image = "womens_super_league2.png"%>
+          <% logo = "womens_super_league_logo.png" %>
+      <% end %>
+      <%= link_to community_path(community) do %>
+      <div class="card-category" style="background-image: url(<%=image_path image%>);">
+        <%= image_tag logo, class: "avatar-large m-3" %>
+          <div class="d-flex flex-row justify-content-center align-items-center">
+            <% if community.owner == current_user %>
+              <h2 id="index-h2"><%= community.community_name %></h2>
           </div>
+          <div class="mt-auto" data-controller="clipboard" data-clipboard-feedback-text-value="Copied!" data-clipboard-code-value=<%= community.join_code %>>
+            <div id="index-card-input">
+              <input data-clipboard-target="input" type="text" value=@communities.join_code readonly>
+            </div>
+              <div>
+                <button class="btn btn-primary" id="index-card-button" data-action="click->clipboard#copy">Copy Join Code</button>
+              </div>
+            </div>
+            <%end%>
         </div>
-        <%end%>
-     </div>
-   <% end %>
- <% end %>
-</div>
+      <% end %>
+    <% end %>
+  </div>
 
-<%= link_to "Back to Home", root_path %>
+
+  <div class="button" id="index-page-button">
+    <%= link_to "<< Back to Home", root_path, class: "btn btn-danger" %>
+  </div>
+  <br>
+  <br>
+</div>

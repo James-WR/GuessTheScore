@@ -8,10 +8,63 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-row-gap: 16px;
+  grid-row-gap: 12px;
+  position: absolute;
 }
+
+#index-page-button {
+  margin-top: calc(100vh - (240px));
+  margin-left: 55px;
+}
+
+#index-h2 {
+  text-shadow: 2px 2px $dark-orange;
+  text-align: center;
+}
+
 .card-category {
   height: 300px;
+  width: 380px;
   background-size: cover;
   margin: 50px;
+  border-radius: 45px;
+  box-shadow: 2px -2px 2px black;
+  display: flex;
+  flex-direction: column;
+}
+
+#index-card-input{
+  display: none;
+}
+
+#index-card-button {
+  border-radius: 45px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cards a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Permanent Marker';
+  font-weight: bold;
+  font-size: 30px;
+
+}
+
+.cards a:hover {
+  color: black;
+}
+
+#link-text a{
+  text-align: center;
+}
+
+.avatar-large {
+  height: 50px;
+  width: 50px;
 }
