@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/90937680/144403541-c5f5d44c-e859-4e62-8b90-924690b2963a.png)
+![image](https://user-images.githubusercontent.com/90937680/144514624-fe660cde-6d69-484c-8b61-e6a0116ea520.png)
 
 ### A soccer guess-the-score app made with Rails 6
  
