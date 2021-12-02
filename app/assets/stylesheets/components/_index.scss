@@ -5,10 +5,41 @@
 @import "form";
 @import "tabs";
 
-
 #index-card-input{
   display: none;
 }
+
+#index-card-button {
+  font-family: Arial, Helvetica, sans-serif;
+  }
+
+.cards a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Permanent Marker';
+  font-weight: bold;
+  font-size: 30px;
+    // margin-top: 120px;
+}
+
+.cards a:hover {
+  color: black;
+}
+
+#link-text a{
+  text-align: center;
+}
+
+.avatar-large {
+  height: 50px;
+  width: 50px;
+}
+
+
+
 // a {
 //   color:rgb(193, 127, 5);
 //   font-weight: bold;
