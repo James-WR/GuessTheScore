@@ -4,13 +4,13 @@
   </div>
   <div class="cards">
     <% @communities.each do |community| %>
-      <% if community.league.league_name == "Premier League" %>
+      <% if community.league.league_name == "Premier League (England)" %>
         <% image = "premier_league2.png"%>
           <% logo = "premier_league_logo_2.png" %>
-      <% elsif community.league.league_name == "Bundesliga" %>
+      <% elsif community.league.league_name == "Bundesliga (Germany)" %>
         <% image = "bundesliga2.png"%>
           <% logo = "bundesliga_logo.png" %>
-      <% else community.league.league_name == "Women's Super League" %>
+      <% elsif community.league.league_name == "Women's Super League (England)" %>
         <% image = "womens_super_league2.png"%>
           <% logo = "womens_super_league_logo.png" %>
       <% end %>

@@ -29,16 +29,40 @@ end
 
 puts "Created 12 random users..."
 
-league = League.new(league_name: "Premier League", match_day: 15)
+league = League.new(league_name: "Premier League (England)", match_day: 15)
 league.save
 
-league = League.new(league_name: "Women's Super League", match_day: 15)
+league = League.new(league_name: "Women's Super League (England)", match_day: 15)
 league.save
 
-league = League.new(league_name: "Bundesliga", match_day: 14)
+league = League.new(league_name: "Bundesliga (Germany)", match_day: 14)
 league.save
 
-puts "Created three leagues..."
+league = League.new(league_name: "Serie A (Italy)", match_day: 14)
+league.save
+
+league = League.new(league_name: "La Liga (Spain)", match_day: 14)
+league.save
+
+league = League.new(league_name: "Primeira Liga (Portugal)", match_day: 14)
+league.save
+
+league = League.new(league_name: "Ligue 1 (France)", match_day: 14)
+league.save
+
+league = League.new(league_name: "Eredivisie (Netherlands)", match_day: 14)
+league.save
+
+league = League.new(league_name: "Brasileirao (Brazil)", match_day: 14)
+league.save
+
+league = League.new(league_name: "Primera Division (Argentina)", match_day: 14)
+league.save
+
+league = League.new(league_name: "Major League Soccer (USA)", match_day: 14)
+league.save
+
+puts "Created eleven leagues..."
 
 fixture = Fixture.new(
   date: "2021-11-20",
