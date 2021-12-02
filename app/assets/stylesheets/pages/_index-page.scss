@@ -15,6 +15,7 @@
 #index-page-button {
   margin-top: calc(100vh - (240px));
   margin-left: 55px;
+  font-family: 'Roboto';
 }
 
 #index-h2 {
@@ -31,6 +32,7 @@
   box-shadow: 2px -2px 2px black;
   display: flex;
   flex-direction: column;
+  color: white;
 }
 
 #index-card-input{
@@ -50,10 +52,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family: 'Permanent Marker';
+  font-family: 'Roboto';
   font-weight: bold;
   font-size: 30px;
-
 }
 
 .cards a:hover {
