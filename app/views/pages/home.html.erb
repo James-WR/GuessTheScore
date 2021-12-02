@@ -1,26 +1,26 @@
 <div id="carousel-main-page" class="carousel slide" data-ride="carousel" data-interval="7000">
   <div class="carousel-inner">
     <div class="carousel-item active">
-        <div style="background-image: url(<%=image_path "carousel_background_2.jpg"%>); height: 68vh; width: 100vw; background-position: center; background-size: cover;">
+        <div style="background-image: url(<%=image_path "carousel_background_2.jpg"%>); height: 100vh; width: 100vw; background-position: center; background-size: cover;">
         </div>
     </div>
     <div class="carousel-item">
-        <div style="background-image: url(<%=image_path "carousel_background_3.jpg"%>); height: 68vh; width: 100vw; background-position: center; background-size: cover;">
+        <div style="background-image: url(<%=image_path "carousel_background_3.jpg"%>); height: 100vh; width: 100vw; background-position: center; background-size: cover;">
         </div>
     </div>
     <div class="carousel-item">
-        <div style="background-image: url(<%=image_path "carousel_background_1.jpg"%>); height: 68vh; width: 100vw; background-position: center; background-size: cover;">
+        <div style="background-image: url(<%=image_path "carousel_background_1.jpg"%>); height: 100vh; width: 100vw; background-position: center; background-size: cover;">
         </div>
     </div>
   </div>
 </div>
-<div style= "position:absolute; top:0; height: 68vh; width: 100vw; background-position: center; background-size: cover;">
+<div class ="home-carousel">
   <h1 id="header-text-main">Guess The Scores</h1>
   <%= render "home_navbar.html" %>
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-12 col-lg-6 text-center" style="margin-top: 150px">
-          <button type="button" class="btn btn-success btn-lg rounded-pill shadow-lg p-4 mr-4" id="button-1" data-toggle="modal" data-target="#exampleModal">Create Your League</button>
+        <div class="home-buttons col-12 col-lg-6 text-center">
+          <button type="button" class="btn btn-success btn-lg rounded-pill shadow-lg p-4 mr-4 home-width-button" id="button-1" data-toggle="modal" data-target="#exampleModal">Create A Community</button>
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -42,7 +42,7 @@
             </div>
           </div>
         </div>
-          <button type="button" class="btn btn-primary btn-lg rounded-pill shadow-lg p-4 ml-4" data-toggle="modal" data-target="#secondModal">Join A League</button>
+          <button type="button" class="btn btn-primary btn-lg rounded-pill shadow-lg p-4 ml-4 home-width-button" data-toggle="modal" data-target="#secondModal">Join A Community</button>
           <div class="modal fade" id="secondModal" tabindex="-1" role="dialog" aria-labelledby="secondModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -67,37 +67,37 @@
           </div>
         </div>
         </div>
-      </div class="row">
-    </div class="container">
-</div>
-<div class="container">
-  <div class="d-flex align-content-stretch justify-content-between" id="home-page-text">
-    <div class="shadow-lg p-3 mb-5 bg-white rounded m-2 mt-1 mt-3 media-body">
-        <h2>1. Create A League</h2>
-          <p>Choose a name for your fledgling community of keen football result predictors.
-          Then decide which real-life football league's matches you will all predict.
-          </p>
-          <span style="font-size: 30px;">
-          <i class="far fa-futbol"></i>
-          </span>
       </div>
-      <div class="shadow-lg p-3 mb-5 bg-white rounded m-2 mt-3 media-body">
-        <h2>2. Invite Friends</h2>
-          <p>Send participants your league's unique join code so they can quickly join your league.
-          Your code is automatically generated when you create a league.
-          </p>
-          <span style="font-size: 30px; color: green; mt-10">
-          <i class="fas fa-users"></i>
-          </span>
-      </div>
+    </div>
+  <div class="home-page-cards container">
+    <div class="d-flex align-content-stretch justify-content-between" id="home-page-text">
       <div class="shadow-lg p-3 mb-5 bg-white rounded m-2 mt-1 mt-3 media-body">
-      <h2>3. Guess The Scores!</h2>
-        <p>Make your guesses for each of the week's fixtures. You gain the most points for
-        guessing both the match outcome and the exact score for each team.
-        </p>
-        <span style="font-size: 30px; color: Tomato;">
-          <i class="fas fa-trophy"></i>
-        </span>
+          <h2>1. Create Community</h2>
+            <p>Choose a name for your fledgling community of keen football result predictors.
+            Then decide which real-life football league's matches you will all predict.
+            </p>
+            <span style="font-size: 30px;">
+            <i class="far fa-futbol"></i>
+            </span>
+        </div>
+        <div class="shadow-lg p-3 mb-5 bg-white rounded m-2 mt-3 media-body">
+          <h2>2. Invite Friends</h2>
+            <p>Send participants your league's unique join code so they can quickly join your league.
+            Your code is automatically generated when you create a league.
+            </p>
+            <span style="font-size: 30px; color: green; mt-10">
+            <i class="fas fa-users"></i>
+            </span>
+        </div>
+        <div class="shadow-lg p-3 mb-5 bg-white rounded m-2 mt-1 mt-3 media-body">
+        <h2>3. Guess The Scores!</h2>
+          <p>Make your guesses for each of the week's fixtures. You gain the most points for
+          guessing both the match outcome and the exact score for each team.
+          </p>
+          <span style="font-size: 30px; color: Tomato;">
+            <i class="fas fa-trophy"></i>
+          </span>
+      </div>
     </div>
   </div>
 </div>
