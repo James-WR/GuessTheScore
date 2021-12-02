@@ -42,6 +42,11 @@
     <% end %>
     </div>
   <button class="btn btn-primary btn-lg" data-action="click->submit-scores#submit">Submit all scores</button>
+  <%= form_tag fast_forward_community_path, method: :post, data: {submit_scores_target: "form"} do %>
+  <div class="d-none">
+    <%= text_field_tag :query, params[:query] %>
+  </div>
+  <% end %>
 </div>
 
 

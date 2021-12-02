@@ -11,6 +11,7 @@ export default class extends Controller {
       }, count)
       count += 50
     });
+    this.buttonTarget.submit()
   }
   update() {
     this.mainTarget.classList.remove("d-none");

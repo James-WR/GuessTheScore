@@ -1,49 +1,44 @@
-<div class="show-page">
-  <br>
-    <h2 id="show-h2"><%= @community.community_name %></h2>
-    <%= link_to "show results", fast_forward_community_path(@community), method: :post, class: "btn btn-primary" %>
-  <br>
-</div>
-<div class="container">
-  <ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <a class="nav-link active" id="guess-the-score-tab" data-toggle="tab" href="#guess-the-score" role="tab" aria-controls="guess-the-score" aria-selected="true">Guess the Score!</a>
-    </li>
-    <li class="nav-item" role="presentation">
-      <a class="nav-link" id="weekly-table-tab" data-toggle="tab" href="#weekly-table" role="tab" aria-controls="weekly-table" aria-selected="false">Weekly Table</a>
-    </li>
-    <li class="nav-item" role="presentation">
-      <a class="nav-link" id="overall-table-tab" data-toggle="tab" href="#overall-table" role="tab" aria-controls="overall-table" aria-selected="false">Overall Table</a>
-    </li>
-    <li class="nav-item" role="presentation">
-      <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Overview</a>
-    </li>
-  </ul>
-
-  <div class="tab-content">
-    <div class="tab-pane active" id="guess-the-score" role="tabpanel" aria-labelledby="guess-the-score-tab">
-      <%= render "form"%>
-    </div>
-    <div class="tab-pane" id="weekly-table" role="tabpanel" aria-labelledby="weekly-table-tab">
-      <%= render "weekly_table"%>
-    </div>
-    <div class="tab-pane" id="overall-table" role="tabpanel" aria-labelledby="overall-table-tab">
-      <%= render "overall_table"%>
-    </div>
-    <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">
-      <div class="row">
-        <div class="column">
-          <%= render "form"%>
-        </div>
-        <div class="column">
-          <%= render "weekly_table"%>
-          <%= render "overall_table"%>
-        </div>
-      </div>
-    <div>
+<div class="photo">
+  <div class="show-page">
+    <br>
+      <h2 id="show-h2"><%= @community.community_name %></h2>
+    <br>
   </div>
-</div>
-
-<div class="container">
-  <%= link_to "<< Go back", communities_path %>
+  <div class="container">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link tab-bg active" id="guess-the-score-tab" data-toggle="tab" href="#guess-the-score" role="tab" aria-controls="guess-the-score" aria-selected="true">Guess the Scores!</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link tab-bg" id="weekly-table-tab" data-toggle="tab" href="#weekly-table" role="tab" aria-controls="weekly-table" aria-selected="false">Weekly Table</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link tab-bg" id="overall-table-tab" data-toggle="tab" href="#overall-table" role="tab" aria-controls="overall-table" aria-selected="false">Overall Table</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link tab-bg" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="false">Results</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="guess-the-score" role="tabpanel" aria-labelledby="guess-the-score-tab">
+        <%= render "form"%>
+      </div>
+      <div class="tab-pane" id="weekly-table" role="tabpanel" aria-labelledby="weekly-table-tab">
+        <%= render "weekly_table"%>
+      </div>
+      <div class="tab-pane" id="overall-table" role="tabpanel" aria-labelledby="overall-table-tab">
+        <%= render "overall_table"%>
+      </div>
+      <div class="tab-pane" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+        <%= render "results"%>
+      </div>
+    </div>
+    <div class="container" id="show-link">
+      <div class="button">
+        <%= link_to "<< Go back", communities_path, class:"btn btn-danger" %>
+      </div>
+      <br>
+    </div>
+    <br>
+  </div>
 </div>
