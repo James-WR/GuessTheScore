@@ -2,7 +2,7 @@
   <h3 id="show-h3">Guess The Scores!</h3>
   <br>
   <div class="d-flex flex-column justify-content-around" data-action="click->submit-scores#update">
-    <% @member_guesses.each do |member_guess| %>
+    <% @member_guesses_fixed.each do |member_guess| %>
       <% if params[:action] == "show" && params[:controller] == "communities" %>
         <div data-submit-scores-target="main" class="">
           <%= simple_form_for([@community, member_guess], html: {class: "guess-score", data:{submit_scores_target: "form"}}) do |f| %>
