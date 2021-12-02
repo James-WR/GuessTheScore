@@ -18,9 +18,18 @@ require("channels")
 
 import "bootstrap";
 import "controllers";
+import { initSweetalert } from '../plugins/init_sweetalert';
 
 document.addEventListener('turbolinks:load', () => {
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()
   })
 })
+
+initSweetalert('#sweet-alert-demo', {
+  title: "A nice alert",
+  text: "This is a great alert, isn't it?",
+  icon: "success"
+}, (value) => {
+  console.log(value);
+});
