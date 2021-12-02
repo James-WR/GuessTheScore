@@ -1210,16 +1210,18 @@ community.save
 
 puts "Created two communities"
 
+Member.create(user_id: 1, community_id: 2, overall_exact: 0, overall_fuzzy: 0, overall_points: 0)
+
 exact = rand(0..12)
 fuzzy = rand(0..(12 - exact))
 
-member = Member.where(user_id: 1).first
+member = Member.where(user_id: 1, community_id: 1).first
 member.update(overall_exact: exact, overall_fuzzy: fuzzy, overall_points: (exact * 3) + fuzzy )
 
 exact = rand(0..12)
 fuzzy = rand(0..(12 - exact))
 
-member = Member.where(user_id: 2).first
+member = Member.where(user_id: 1, community_id: 2).first
 member.update(overall_exact: exact, overall_fuzzy: fuzzy, overall_points: (exact * 3) + fuzzy )
 
 puts "Added random points data for owners"
