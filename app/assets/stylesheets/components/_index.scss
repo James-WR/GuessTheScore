@@ -5,33 +5,6 @@
 @import "form";
 @import "tabs";
 
-<<<<<<< HEAD
-#communities-index-title h2 {
-  color: rgb(193, 127, 5);
-  display: flex;
-  justify-content: center;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  position: absolute;
-}
-
-.card-category {
-  height: 300px;
-  width: 400px;
-  background-size: cover;
-  margin: 120px;
-  // border-radius: 45px;
-  box-shadow: 5px -5px 5px black;
-  display: flex;
-  flex-direction: column;
-}
-=======
->>>>>>> 55879fb2cee62dbb221bc2da3e655e23508c5bb1
-
 #index-card-input{
   display: none;
 }
