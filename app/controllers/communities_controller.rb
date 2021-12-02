@@ -87,7 +87,7 @@ class CommunitiesController < ApplicationController
     @community.join_code = Digest::SHA256.hexdigest data
 
     if @community.save
-      redirect_to community_path(@community)
+      redirect_to communities_path
     else
       render "pages/home"
     end
