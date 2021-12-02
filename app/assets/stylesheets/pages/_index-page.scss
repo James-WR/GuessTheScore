@@ -1,10 +1,10 @@
 #communities-index-title h2 {
-  color: $green;
+  color: $dark-orange;
   display: flex;
   justify-content: center;
   padding-top: 20px;
   font-size: 49px;
-  text-shadow: 2px 2px $white;
+  // text-shadow: 2px 2px $white;
 }
 
 .cards {
@@ -27,7 +27,6 @@
 }
 
 #index-h2 {
-  text-shadow: 2px 2px $red;
   text-align: center;
 }
 
