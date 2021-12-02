@@ -1,10 +1,16 @@
 <div class="container form-container" data-controller="submit-scores" style="width:500px" id="show-form">
   <h3 id="show-h3">Guess The Scores!</h3>
   <br>
+<<<<<<< HEAD
   <div class="d-flex flex-column justify-content-around" data-action="click->submit-scores#update">
     <% @member_guesses.each do |member_guess| %>
       <% if params[:action] == "show" && params[:controller] == "communities" %>
         <div data-submit-scores-target="main" class="">
+=======
+    <% @member_guesses_fixed.each do |member_guess| %>
+      <div class="guess-score">
+        <% if params[:action] == "show" && params[:controller] == "communities" %>
+>>>>>>> 1a2ff0ceb19a01d9fa7347d424dcfb4955f0a313
           <%= simple_form_for([@community, member_guess], html: {class: "guess-score", data:{submit_scores_target: "form"}}) do |f| %>
           <div class="d-flex flex-row">
             <div class="mr-4" style="width:110px">

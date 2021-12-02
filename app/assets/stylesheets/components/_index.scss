@@ -7,6 +7,37 @@
 
 
 
+<<<<<<< HEAD
+=======
+.cards a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Permanent Marker';
+  font-weight: bold;
+  font-size: 30px;
+    // margin-top: 120px;
+}
+
+.cards a:hover {
+  color: black;
+}
+
+#link-text a{
+  text-align: center;
+}
+
+
+#index-card-input p {
+  display: none;
+
+.avatar-large {
+  height: 50px;
+  width: 50px;
+}
+>>>>>>> 1a2ff0ceb19a01d9fa7347d424dcfb4955f0a313
 
 
 // #index-card-input p {
