@@ -17,7 +17,7 @@
       <%= link_to community_path(community) do %>
       <div class="card-category" style="background-image: url(<%=image_path image%>);">
         <%= image_tag logo, class: "avatar-large m-3" %>
-          <div class="d-flex flex-row justify-content-center align-items-center">
+          <div class="d-flex flex-row justify-content-center align-items-center" id="index-card-names">
             <h2 id="index-h2"><%= community.community_name %></h2>
           </div>
           <div class="mt-auto" data-controller="clipboard" data-clipboard-feedback-text-value="Copied!" data-clipboard-code-value=<%= community.join_code %>>
