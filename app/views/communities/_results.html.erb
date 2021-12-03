@@ -16,7 +16,7 @@
           </span>
         </p>
         <% if guess.home_goals_guess == guess.fixture.home_goals_result && guess.away_goals_guess == guess.fixture.away_goals_result %>
-          <p id="green">Congrats! You got the score bang on! You guessed: <%= guess.home_goals_guess %> – <%= guess.away_goals_guess %>
+          <p id="green">Congrats! You got it bang on! You guessed: <%= guess.home_goals_guess %> – <%= guess.away_goals_guess %>
         <% elsif (guess.home_goals_guess <=> guess.away_goals_guess) == (guess.fixture.home_goals_result <=> guess.fixture.away_goals_result) %>
           <p id="orange">Good job! Nearly right... You guessed: <%= guess.home_goals_guess %> – <%= guess.away_goals_guess %></p>
         <% else %>
