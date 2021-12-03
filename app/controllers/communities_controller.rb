@@ -52,9 +52,7 @@ class CommunitiesController < ApplicationController
         guess = member.member_guesses.where(fixture_id: fixture.id).first
         if guess.home_goals_guess == fixture.home_goals_result && guess.away_goals_guess == fixture.away_goals_result
           weekly_exact += 1
-        elsif guess.home_goals_guess > guess.away_goals_guess && fixture.home_goals_result > fixture.away_goals_result
-          weekly_fuzzy += 1
-        elsif guess.away_goals_guess > guess.home_goals_guess && fixture.away_goals_result > fixture.home_goals_result
+        elsif (guess.home_goals_guess <=> guess.away_goals_guess) == (fixture.home_goals_result <=> fixture.away_goals_result)
           weekly_fuzzy += 1
         end
       end
