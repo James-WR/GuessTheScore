@@ -5,12 +5,12 @@ export default class extends Controller {
 
   submit(event) {
     event.target.disabled = true
-    let count = 50
+    let count = 100
     this.formTargets.forEach((form) => {
       setTimeout(function() {
         form.submit()
       }, count)
-      count += 50
+      count += 100
     });
     this.buttonTarget.submit()
   }
