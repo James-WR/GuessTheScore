@@ -1,7 +1,7 @@
 class CommunitiesController < ApplicationController
   def index
     # memberships = current_user.members
-    @communities = current_user.members.map(&:community)
+    @communities = current_user.communities.order(created_at: :asc)
     # memberships.each do |membership|
     #   Community.all.each do |community|
     #     @communities << community if community.members.include?(membership)
