@@ -1,5 +1,12 @@
 <div class="container form-container" data-controller="submit-scores" style="width:500px" id="show-form">
-  <h3 id="show-h3">Guess The Scores!</h3>
+  <h3 id="show-h3">Guess The Scores! </h3>
+    <% if @community.league.league_name == "Premier League (England)" %>
+      <h4 id="show-h4">Match Day 15</h4>
+    <% elsif @community.league.league_name == "Bundesliga (Germany)" %>
+      <h4 id="show-h4">Match Day 14</h4>
+    <% elsif @community.league.league_name == "Women's Super League (England)" %>
+      <h4 id="show-h4">Match Day 15</h4>
+    <% end %>
   <br>
   <div class="d-flex flex-column justify-content-around" data-action="click->submit-scores#update">
     <% @member_guesses_fixed.each do |member_guess| %>

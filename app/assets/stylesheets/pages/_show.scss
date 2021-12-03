@@ -25,16 +25,20 @@
 #green {
   color: green;
   font-weight: 900;
+  font-family: 'Outfit';
+  font-family: 'Varela Round';
 }
 
 #orange {
   color: rgb(71, 71, 231);
   font-weight: 900;
+  font-family: 'Varela Round';
 }
 
 #red {
   color: rgb(241, 7, 7);
   font-weight: 900;
+  font-family: 'Varela Round';
 }
 
 #show-h2 {
@@ -49,8 +53,12 @@
 
 #show-h3 {
   padding-top: 40px;
+  text-align: center;
 }
 
+#show-h4 {
+  text-align: center;
+}
 .tab-pane{
   background: rgba(234, 233, 233, 0.929);
 }
