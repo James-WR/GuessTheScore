@@ -4,6 +4,6 @@
  
 Compete with friends, family and colleagues to prove you're better at predicting the weekend's exact football scores!
 
-Create a community and invite your would-be rivals with your community's unique join code. Select the real-world league you follow (EPL, Bundesliga, La Liga etc) and make your predictions before the deadline.
+Create a community and invite your would-be rivals with a unique join code. Select the real-world league you follow (EPL, Bundesliga, La Liga etc) and make your predictions before the deadline.
 
 Come back on Monday to check out the weekly and overall standings. You get a few points for guessing who won, but a load more for getting the score bang on!
