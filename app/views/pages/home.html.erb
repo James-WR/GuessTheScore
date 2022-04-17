@@ -29,11 +29,13 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
+              <div class="modal-body" id="index-modal">
                 <h2>Create a Community</h2>
                 <%= simple_form_for(@community) do |f| %>
-                  <%= f.input :community_name %>
-                  <%= f.association :league, label_method: :league_name %>
+                  <div class="index-inputs">
+                    <%= f.input :community_name %>
+                    <%= f.association :league, label_method: :league_name %>
+                  </div>
                   <div class="submit">
                     <%= f.submit "Submit", class: "btn btn-success" %>
                   </div>
@@ -69,9 +71,9 @@
         </div>
       </div>
     </div>
-  <div class="home-page-cards container">
+  <div class="home-page-cards container" id="home-page-cards">
     <div class="d-flex align-content-stretch justify-content-between">
-      <div class="shadow-lg p-3 mb-5 bg-white rounded m-2 mt-1 mt-3 media-body">
+      <div class="shadow-lg p-3 mb-5 rounded m-2 mt-1 mt-3 media-body" id="card-1">
           <h2>1. Create Community</h2>
             <p>Choose a name for your fledgling community of keen football result predictors.
             Then decide which real-life football league's matches you will all predict.
@@ -80,7 +82,7 @@
             <i class="far fa-futbol"></i>
             </span>
         </div>
-        <div class="shadow-lg p-3 mb-5 bg-white rounded m-2 mt-3 media-body">
+        <div class="shadow-lg p-3 mb-5 rounded m-2 mt-3 media-body" id="card-2">
           <h2>2. Invite Friends</h2>
             <p>Send participants your league's unique join code so they can quickly join your league.
             Your code is automatically generated when you create a league.
@@ -89,7 +91,7 @@
             <i class="fas fa-users"></i>
             </span>
         </div>
-        <div class="shadow-lg p-3 mb-5 bg-white rounded m-2 mt-1 mt-3 media-body">
+        <div class="shadow-lg p-3 mb-5 rounded m-2 mt-1 mt-3 media-body" id="card-3">
         <h2>3. Guess The Scores!</h2>
           <p>Make your guesses for each of the week's fixtures. You gain the most points for
           guessing both the match outcome and the exact score for each team.

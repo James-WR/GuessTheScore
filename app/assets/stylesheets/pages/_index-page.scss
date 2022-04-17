@@ -14,6 +14,10 @@
   position: absolute;
 }
 
+#index-card-names {
+  padding-top: 20px;
+}
+
 #index-page-button {
   margin-top: calc(100vh - (240px));
   margin-left: 55px;
@@ -26,8 +30,26 @@
   background-size: cover;
 }
 
+
 #index-h2 {
   text-align: center;
+  padding-top: 20px;
+}
+
+.index-inputs{
+  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#card-1{
+  background: whitesmoke;
+}
+#card-2{
+  background: whitesmoke;
+}
+#card-3{
+  background: whitesmoke;
 }
 
 .card-category {

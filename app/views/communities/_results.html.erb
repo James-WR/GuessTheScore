@@ -2,27 +2,31 @@
 <div class="container" style="width:800px">
   <div class="results">
     <h2 class="mb-4" id="h2-results">Results for Match Day <%=@fixtures.first.match_day%> </h2>
-    <% @member_guesses_results.each do |guess| %>
-      <div class="d-flex">
-        <p style="width:350px">
-          <span class="team-name" id="home-team">
-            <%= guess.fixture.home_team %>
-          </span>
-          <span class="results" id="team-results">
-            <%= guess.fixture.home_goals_result %> – <%= guess.fixture.away_goals_result %>
-          </span>
-          <span class="team-name" id="away-team">
-            <%= guess.fixture.away_team %>
-          </span>
-        </p>
-        <% if guess.home_goals_guess == guess.fixture.home_goals_result && guess.away_goals_guess == guess.fixture.away_goals_result %>
-          <p id="green">Congrats! You got it bang on! You guessed: <%= guess.home_goals_guess %> – <%= guess.away_goals_guess %>
-        <% elsif (guess.home_goals_guess <=> guess.away_goals_guess) == (guess.fixture.home_goals_result <=> guess.fixture.away_goals_result) %>
-          <p id="orange">Good job! Nearly right... You guessed: <%= guess.home_goals_guess %> – <%= guess.away_goals_guess %></p>
-        <% else %>
-          <p id="red">Oops... You guessed: <%= guess.home_goals_guess %> – <%= guess.away_goals_guess %></p>
-        <% end %>
-      </div>
+    <% unless @community.community_name == "1966ers"  %>
+      <% @member_guesses_results.each do |guess| %>
+        <div class="d-flex">
+          <p style="width:350px">
+            <span class="team-name" id="home-team">
+              <%= guess.fixture.home_team %>
+            </span>
+            <span class="results" id="team-results">
+              <%= guess.fixture.home_goals_result %> – <%= guess.fixture.away_goals_result %>
+            </span>
+            <span class="team-name" id="away-team">
+              <%= guess.fixture.away_team %>
+            </span>
+          </p>
+          <% if guess.home_goals_guess == guess.fixture.home_goals_result && guess.away_goals_guess == guess.fixture.away_goals_result %>
+            <p id="green">Congrats! You got it bang on! You guessed: <%= guess.home_goals_guess %> – <%= guess.away_goals_guess %>
+          <% elsif (guess.home_goals_guess <=> guess.away_goals_guess) == (guess.fixture.home_goals_result <=> guess.fixture.away_goals_result) %>
+            <p id="orange">Good job! Nearly right... You guessed: <%= guess.home_goals_guess %> – <%= guess.away_goals_guess %></p>
+          <% else %>
+            <p id="red">Oops... You guessed: <%= guess.home_goals_guess %> – <%= guess.away_goals_guess %></p>
+          <% end %>
+        </div>
+      <% end %>
+    <% else %>
+      <p>Come back later! The matches are yet to be played...</p>
     <% end %>
   </div>
 </div>
